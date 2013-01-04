@@ -20,15 +20,11 @@
 				%nav.navbar-inner
 					%ul.nav.pull-left
 						%li
-							%a{:href=>"#"}
-								%b Home
+							= link_to 'Home', root_path
 						%li.divider-vertical
 						%li
-							%a{:href=>"#"} Library
+							= link_to 'Library', '/library'
 							
-						%li.divider-vertical
-						%li
-							%a{:href=>"#"} Lend
 					%ul.nav.pull-right
 						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
 							%input.search-query{:type=>'text',:placeholder=>"Search"}
