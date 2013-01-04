@@ -4,6 +4,9 @@ RPO::Application.routes.draw do
   resources :authors
   resources :books
   
+  resources :searches
+  match '/search'							, to: 'searches#index', :via => :get
+  
   resources :sessions						, only: [:new, :create, :destroy]
   match '/signin'							, to: 'sessions#create'
   match '/signout'							, to: 'session#destroy'

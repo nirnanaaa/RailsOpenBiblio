@@ -26,8 +26,8 @@
 							= link_to 'Library', '/library'
 							
 					%ul.nav.pull-right
-						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
-							%input.search-query{:type=>'text',:placeholder=>"Search"}
+						%form.navbar-search.pull-right{:method=>'GET', :action=>'/searches'}
+							%input.search-query.search{:type=>'text',:placeholder=>"Search"}
 			
 			- if flash_messages.nil?
 				.row.warning.alert.alert-block.alert-info
@@ -40,3 +40,5 @@
 		= javascript_include_tag "application"
 		/[if lt IE 9]
 			%script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+		%script
+			$('.search').typeahead()
