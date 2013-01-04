@@ -34,7 +34,7 @@
 				%td.small Actions
 		%tbody
 			- @author.books.each do |book|
-				- if !book.available?
+				- if book.available
 					%tr.error
 						%td= book.name
 						%td= book.release
