@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  biography: MyText
+  born: 1
+  died: 1
+  books: 1
+
+two:
+  name: MyString
+  biography: MyText
+  born: 1
+  died: 1
+  books: 1
