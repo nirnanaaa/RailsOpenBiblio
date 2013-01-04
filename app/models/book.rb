@@ -1,4 +1,8 @@
 class Book < ActiveRecord::Base
+	##
+	##Add Image to /new!
+	##
+	##
 	attr_accessible :name, :release, :kind, :isbn, :slogan, :author_id, :available, :image
 	
 	has_attached_file :image, 			:styles => 
