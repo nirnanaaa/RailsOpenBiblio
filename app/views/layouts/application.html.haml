@@ -23,8 +23,17 @@
 							= link_to 'Home', root_path
 						%li.divider-vertical
 						%li
-							= link_to 'Library', '/library'
-							
+							= link_to 'Books', '/books'
+						%li.divider-vertical
+						%li
+							= link_to 'Authors', '/authors'	
+						%li.divider-vertical
+						%li
+							= link_to 'Genres', '/genres'	
+						%li.divider-vertical
+						%li
+							= link_to 'Tags', '/tags'	
+													
 					%ul.nav.pull-right
 						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
 							%input.search-query.search{:type=>'text',:placeholder=>"Search",:name=>"keyword"}
