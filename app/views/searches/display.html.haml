@@ -1,0 +1,8 @@
+.row
+	%h2 Authors
+	-@authors.each do |result|
+		= result.name
+		
+	%h2 Books
+	-@books.each do |result|
+		= result.name
