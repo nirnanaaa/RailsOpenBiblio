@@ -27,3 +27,4 @@ gem "haml", "~> 3.1.7"
 gem 'simple_form'
 gem 'rmagick'
 gem 'paperclip'
+gem "rails_config"

@@ -40,10 +40,10 @@ module RPO
 	#----IMAGES----#
 	#Max upload filesize (KB) 
 	#for MB use just use 20*1024 for 20M
-	config.image.maxfilesize = 20
+	config.image_maxfilesize = 20
 	
 	#Max files (0=unlimited) NYI
-	config.image.maxfiles = 0
+	config.image_maxfiles = 0
 	
 	#---/IMAGES----#
 	
