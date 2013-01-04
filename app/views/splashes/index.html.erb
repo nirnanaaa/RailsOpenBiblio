@@ -1,1 +1,85 @@
-&lt;html&gt; content
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Preview</td>
+			<td>Information</td>
+		</tr>
+	</thead>
+	<tbody>
+	<!--for book in books-->
+	<tr class="<!--book  name= der-gegenschlag -->">
+		<td class="preview-image">
+			<!--if status != unavailable-->
+			<a href="/vince-flynn/der-gegenschlag/summary">
+			<!--endif-->
+				<img src="http://ecx.images-amazon.com/images/I/51U2zxd5KJL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU03_.jpg" width="200" height="210" title="Der Gegenschlag"/>
+			<!--if status != unavailable-->
+			</a>
+			<!--endif-->
+		</td>
+		<td class="list-information">
+			<dl class="dl-horizontal">
+				<dt><i title="name" class="icon-file"></i></dt>
+				<dd>{{book.title.long|truncatechars:70}}</dd>
+				
+				<dt><i title="description" class="icon-th"></i></dt>
+				<dd>{{book.description|truncatechars:170}}</dd>
+				
+				<dt><i title="author" class="icon-star"></i></dt>
+				<dd><a href="/author/{{book.author.short}}">{{book.author.long}}</a></dd>
+				
+				<dt><i title="genre" class="icon-tag"></i></dt>
+				<dd><a href="/genre/{{book.genre.short}}">{{book.genre.long}}</a></dd>
+				
+				<dt><i title="user" class="icon-user"></i></dt>
+				<dd><a href="/user/{{book.owner.short}}"> {{book.owner.long}}</a></dd>
+			</dl>
+		
+		<div class="bottom-status-line">
+		
+			<div class="status-book pull-left">
+				<!-- if book.status == available -->
+				<a href="#"><span class="label label-success">Available</span></a>
+				<!-- elseif book.status == locked -->
+				<a href="#"><span class="label label-warning">Locked</span></a>
+				<!-- elseif book.status == unavailable -->
+				<span class="label label-important">Unavailable</span>
+				<!-- endif -->
+			</div>
+			<div class="actions pull-right">
+				<!--if user.id == book.owner || user.isadmin -->
+				<a href="/vince-flynn/der-gegenschlag/delete"><i title="delete" class="icon-trash"></i></a> | 
+				<a href="/vince-flynn/der-gegenschlag/edit"><i title="edit" class="icon-pencil"></i></a> | 
+				<!--endif-->
+				<!--if status != unavailable-->
+				
+				<!-- if book.downloadable == 1-->
+				<a href="/vince-flynn/der-gegenschlag/download"><i title="download" class="icon-download-alt"></i></a> | 
+				<!--endif-->
+				
+				<a href="/vince-flynn/der-gegenschlang/book"><i title="book" class="icon-lock"></i></a></div>
+				<!--endif-->
+		</div>
+		</td>
+	</tr>
+	<!--enfor-->
+	</tbody>
+</table>
+<div class="row">
+    <div class="pagination pull-right">
+		<ul>
+			
+			<li class="<!--if books.current == 0-->disabled<!--endif-->"><a href="#"><<</a></li>
+			
+			
+			<!--for page in books.pages-->
+			<li><a href="#">1</a></li>
+			<!--endfor-->
+			
+			
+			<li><a class="<!--if books.current == sizeof(books.pages)-->disabled<!--endif-->" href="#">>></a></li>
+			
+		</ul>
+    </div>
+</div>
+
