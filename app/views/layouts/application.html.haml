@@ -34,8 +34,9 @@
 							%input.search-query{:type=>'text',:placeholder=>"Search"}
 			
 			.row.warning.alert.alert-block.alert-info
+				
 				%button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
-				Info
+				= raw flash_messages
 				
 			.row
 				= yield

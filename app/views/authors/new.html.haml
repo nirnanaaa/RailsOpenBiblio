@@ -1,5 +1,8 @@
-
-= simple_form_for :action, :html => { :class => 'form-horizontal', multipart:true }  do |f|
+= simple_form_for @author, :html => { :class => 'form-horizontal', multipart:true }  do |f|
 	.form-actions
+		= f.input :name
+		= f.input :born
+		= f.input :died
+		= f.input :biography, :as => :text
 		= f.submit nil, :class => 'btn btn-primary'
 		= link_to "Cancel", nil, :class => 'btn'
