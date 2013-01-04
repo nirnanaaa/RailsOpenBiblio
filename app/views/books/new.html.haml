@@ -1,0 +1,14 @@
+= simple_form_for @book, :html => { :class => 'form-horizontal', multipart:true }  do |f|
+	.form-actions
+		.control-group
+			= f.input :name
+			= f.input :release
+			= f.input :kind, :as => :string, :label => "Genre"
+			= f.input :isbn, :label => "ISBN"
+			= f.input :slogan, :as => :string
+			= f.input :author, :collection => @authors, :prompt => "Select the author"
+			= f.input :available
+			= f.submit nil, :class => 'btn btn-primary'
+			= link_to "Cancel", nil, :class => 'btn'
+			
+		
