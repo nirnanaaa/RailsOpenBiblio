@@ -24,3 +24,24 @@
 				%dd
 					%p
 						= @author.biography
+
+.row.low-margin
+	%table.table.table-condensed.table-hover
+		%thead
+			%tr
+				%td Name
+				%td.small Released
+				%td Location
+				%td.small Actions
+		%tbody
+			- @author.books.each do |book|
+				%tr.error
+					%td= book.name
+					%td= book.release
+					%td
+					%td
+						.pull-right.low-margin
+							%a{:href=>'#'}
+								%i.icon-trash
+							%a{:href=>'#'}
+								%i.icon-pencil
