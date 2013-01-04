@@ -2,9 +2,38 @@
 %html{:lang => "en"}
 	%head
 		%title= RPO
+		
+		
+		%meta{:charset => "utf-8"}
+		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+		%meta{:name => "author", :content => "author"}
+		
 		= stylesheet_link_tag  "application", :media => "all"
+
 		= csrf_meta_tags
-	%body
-		= yield
+	%body.linear-gradient-background.dimmed
+		#wrapper.container
+			.row
+				.logo
+					= image_tag "layout/logo_top.png"
+			%nav.row.navbar
+				%nav.navbar-inner
+					%ul.nav.pull-left
+						%li
+							%a{:href=>"#"}
+								%b Home
+						%li.divider-vertical
+						%li
+							%a{:href=>"#"} Library
+							
+						%li.divider-vertical
+						%li
+							%a{:href=>"#"} Lend
+					%ul.nav.pull-right
+						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
+							%input.search-query{:type=>'text',:placeholder=>"Search"}
+			= yield
 	
 		= javascript_include_tag "application"
+		/[if lt IE 9]
+			%script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
