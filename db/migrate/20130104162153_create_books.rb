@@ -1,6 +1,7 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
+	  t.integer :book_id
       t.string :name
       t.text :description
 	  t.integer :release
@@ -9,14 +10,14 @@ class CreateBooks < ActiveRecord::Migration
 	  t.integer :isbn
 	  t.integer :available
 	  
-	  t.references :locations
-      t.references :authors
-      t.references :genres
+	  t.references :location
+      t.references :author
+      t.references :genre
 	
       t.timestamps
     end
-	add_index :books, :locations_id
-    add_index :books, :authors_id
-    add_index :books, :genres_id
+	add_index :books, :location_id
+    add_index :books, :author_id
+    add_index :books, :genre_id
   end
 end

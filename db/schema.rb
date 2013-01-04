@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130104170752) do
 
   create_table "authors", :force => true do |t|
+    t.integer  "author_id"
     t.string   "name"
     t.text     "biography"
     t.integer  "born"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130104170752) do
   end
 
   create_table "books", :force => true do |t|
+    t.integer  "book_id"
     t.string   "name"
     t.text     "description"
     t.integer  "release"
@@ -31,16 +33,16 @@ ActiveRecord::Schema.define(:version => 20130104170752) do
     t.text     "slogan"
     t.integer  "isbn"
     t.integer  "available"
-    t.integer  "locations_id"
-    t.integer  "authors_id"
-    t.integer  "genres_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "location_id"
+    t.integer  "author_id"
+    t.integer  "genre_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "books", ["authors_id"], :name => "index_books_on_authors_id"
-  add_index "books", ["genres_id"], :name => "index_books_on_genres_id"
-  add_index "books", ["locations_id"], :name => "index_books_on_locations_id"
+  add_index "books", ["author_id"], :name => "index_books_on_author_id"
+  add_index "books", ["genre_id"], :name => "index_books_on_genre_id"
+  add_index "books", ["location_id"], :name => "index_books_on_location_id"
 
   create_table "genres", :force => true do |t|
     t.string   "name"
