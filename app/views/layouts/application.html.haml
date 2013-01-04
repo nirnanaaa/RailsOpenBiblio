@@ -26,7 +26,7 @@
 							= link_to 'Library', '/library'
 							
 					%ul.nav.pull-right
-						%form.navbar-search.pull-right{:method=>'GET', :action=>'/searches'}
+						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
 							%input.search-query.search{:type=>'text',:placeholder=>"Search"}
 			
 			- if flash_messages.nil?
