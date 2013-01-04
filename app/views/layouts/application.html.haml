@@ -32,7 +32,11 @@
 					%ul.nav.pull-right
 						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
 							%input.search-query{:type=>'text',:placeholder=>"Search"}
-			= yield
+			.row.warning.alert.alert-block.alert-info
+				%button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
+				Info
+			.row
+				= yield
 	
 		= javascript_include_tag "application"
 		/[if lt IE 9]
