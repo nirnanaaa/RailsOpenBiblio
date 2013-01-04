@@ -1,4 +1,5 @@
 RPO::Application.routes.draw do
+  match '/' => 'splashes#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
