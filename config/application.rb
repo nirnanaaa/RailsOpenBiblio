@@ -34,8 +34,19 @@ module RPO
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
+	# config.active_record.whitelist_attributes = false
     config.encoding = "utf-8"
-
+	
+	#----IMAGES----#
+	#Max upload filesize (KB) 
+	#for MB use just use 20*1024 for 20M
+	config.image.maxfilesize = 20
+	
+	#Max files (0=unlimited) NYI
+	config.image.maxfiles = 0
+	
+	#---/IMAGES----#
+	
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
@@ -48,7 +59,7 @@ module RPO
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
-    # config.active_record.whitelist_attributes = true
+    config.active_record.whitelist_attributes = false
 
     # Enable the asset pipeline
     config.assets.enabled = true

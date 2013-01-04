@@ -3,6 +3,7 @@
 		= f.input :name
 		= f.input :born
 		= f.input :died
+		= f.input :avatar, :as => :file
 		= f.input :biography, :as => :text
 		= f.submit nil, :class => 'btn btn-primary'
 		= link_to "Cancel", nil, :class => 'btn'

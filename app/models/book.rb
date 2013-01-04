@@ -1,10 +1,6 @@
 class Book < ActiveRecord::Base
-  attr_accessible :name, :description, :release, :kind, :slogan, :isbn, :available
-  
-
-
-  has_one :author
-  has_one :location
-  has_and_belongs_to_many :genres
+	attr_accessible :name, :release, :kind, :isbn, :slogan, :author_id, :available
+	has_one :author
+	has_and_belongs_to_many :genres
   
 end

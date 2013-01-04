@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .author-image{
+	background: linear-gradient(90deg,#fff 0%,transparent 50%, #fff 100%);
+	text-align:center;
+	height: 300px;
+}
+.author-image img{
 	height: 300px;
 }
 .low-margin{

@@ -4,9 +4,9 @@ class BooksController < ApplicationController
 		@book = Book.new
 	end
 	def create
-		@newbook = Author.new(params[:book])
+		@newbook = Book.new(params[:book])
 		if @newbook.save
-			render 'new'
+			render "show"
 		end
 	end
 	def show

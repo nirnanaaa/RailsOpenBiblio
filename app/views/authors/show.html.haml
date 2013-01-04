@@ -1,7 +1,7 @@
 .row
 	.span4
 		.author-image.img-polaroid
-			= image_tag "layout/logo_top.png"
+			= image_tag @author.avatar.url
 	.span8
 		%dl.author-info.dl-horizontal
 			%dt
@@ -33,11 +33,14 @@
 				%td.small Released
 				%td.small Actions
 		%tbody
+			
 			- @author.books.each do |book|
-				- if book.available
+				%a{:href=>"#"}
+				- if book.available == 0
 					%tr.error
-						%td= book.name
-						%td= book.release
+						%td
+							%a{:href => "#"}= book.name
+						%td= Time.at(book.release).utc.strftime("%m/%d/%Y")
 						%td
 							%a{:href=>'#'}
 								%i.icon-trash
@@ -47,8 +50,9 @@
 						
 				- else
 					%tr.success
-						%td= book.name
-						%td= book.release
+						%td
+							%a{:href => "#"}= book.name
+						%td= Time.at(book.release).utc.strftime("%m/%d/%Y")
 						%td
 							%a{:href=>'#'}
 								%i.icon-trash

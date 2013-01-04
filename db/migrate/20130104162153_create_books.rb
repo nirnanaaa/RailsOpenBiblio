@@ -5,10 +5,11 @@ class CreateBooks < ActiveRecord::Migration
       t.string :name
       t.text :description
 	  t.integer :release
-	  t.text :kind
-	  t.text :slogan
 	  t.integer :isbn
 	  t.integer :available
+	  t.text :kind
+	  t.text :slogan
+
 	  
 	  t.references :location
       t.references :author
