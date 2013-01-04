@@ -21,7 +21,7 @@ class AuthorsController < ApplicationController
 	
 	def show
 		@author = Author.find(params[:id])
-		@author.books.create(:name => "KillShot")
+		@book = @author.books.create(:name => "KillShot")
 		render 'show'
 	end
 	

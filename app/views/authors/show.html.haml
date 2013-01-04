@@ -6,7 +6,7 @@
 		%dl.author-info.dl-horizontal
 			%dt
 				%i.icon-user{:title=>'author'}
-			%dl= @author.name
+			%dd= @author.name
 			- if @author.born
 				%dt
 					%i.icon-star{:title=>'born'}
@@ -21,7 +21,7 @@
 			- if @author.biography
 				%dt
 					%i.icon-book{:title=>'biography'}
-				%dd
+				%dd.author-biography
 					%p
 						= @author.biography
 
@@ -31,17 +31,27 @@
 			%tr
 				%td Name
 				%td.small Released
-				%td Location
 				%td.small Actions
 		%tbody
 			- @author.books.each do |book|
-				%tr.error
-					%td= book.name
-					%td= book.release
-					%td
-					%td
-						.pull-right.low-margin
+				- if !book.available?
+					%tr.error
+						%td= book.name
+						%td= book.release
+						%td
 							%a{:href=>'#'}
 								%i.icon-trash
+							&nbsp;| 
+							%a{:href=>'#'}
+								%i.icon-pencil
+						
+				- else
+					%tr.success
+						%td= book.name
+						%td= book.release
+						%td
+							%a{:href=>'#'}
+								%i.icon-trash
+							&nbsp;| 
 							%a{:href=>'#'}
 								%i.icon-pencil
