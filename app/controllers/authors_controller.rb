@@ -1,5 +1,4 @@
 class AuthorsController < ApplicationController
-	before_filter :signed_in_filter
 	def create
 		@author = Author.new(params[:author])
 		
@@ -9,6 +8,7 @@ class AuthorsController < ApplicationController
 			flash[:error] = "Could not create author #{@author.name}"
 			render 'new'
 		end
+		
 	end
 	def index
 	
