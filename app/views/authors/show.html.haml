@@ -1,0 +1,26 @@
+.row
+	.span4
+		.author-image.img-polaroid
+			= image_tag "layout/logo_top.png"
+	.span8
+		%dl.author-info.dl-horizontal
+			%dt
+				%i.icon-user{:title=>'author'}
+			%dl= @author.name
+			- if @author.born
+				%dt
+					%i.icon-star{:title=>'born'}
+				%dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
+			
+			- if @author.died
+				%dt
+					%i.icon-plus{:title=>'died'}
+				%dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
+				
+			
+			- if @author.biography
+				%dt
+					%i.icon-book{:title=>'biography'}
+				%dd
+					%p
+						= @author.biography
