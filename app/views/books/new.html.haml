@@ -7,7 +7,7 @@
 			= f.input :isbn, :label => "ISBN"
 			= f.input :slogan, :as => :string
 			= f.input :author_id, :collection => @authors, :prompt => "Select the author"
-			= f.input :available
+			= f.input :available, :as => :boolean
 			= f.submit nil, :class => 'btn btn-primary'
 			= link_to "Cancel", nil, :class => 'btn'
 			

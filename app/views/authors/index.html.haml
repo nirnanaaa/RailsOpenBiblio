@@ -1,0 +1,21 @@
+.row
+	%table.table.table-striped.table-hover
+		%thead
+			%tr.center-table
+				%td #
+				%td Name
+				%td Born
+				%td Died
+		%tbody
+			- @author.each do |author|
+				%tr.clickable{:href=>"abc"}
+					%td.author-thumb= image_tag author.avatar.url(:thumb)
+					%td.author-name= author.name
+					%td.author-born= Time.at(author.born).utc.strftime("%m/%d/%Y")
+					%td.author-born= Time.at(author.died).utc.strftime("%m/%d/%Y")
+	
+	:javascript
+		$('.clickable').click(function(){
+			window.location = $(this).attr('href');
+			return false;
+		});

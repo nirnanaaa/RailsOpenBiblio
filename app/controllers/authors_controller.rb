@@ -15,8 +15,24 @@ class AuthorsController < ApplicationController
 		@author = Author.new
 	end
 	
-	def index
+	def name
 	
+	end
+	
+	def index
+		@count = Author.count+1
+		if params[:end]
+			@end = params[:end]
+		else	
+			@end = @count
+		end
+		if params[:start]
+			@start = params[:start]
+		else
+			@start = 0
+		end
+		@author = Author.where('id < ? AND id > ?',@end, @start)
+		
 	end
 	
 	def show
