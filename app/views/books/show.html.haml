@@ -1,42 +1,47 @@
 %h1
-	= @book.name
+  = @book.name
 %h4
-	= raw(tag_generator(@book.kind))
-
-= image_tag @book.image, :class => "img-polaroid", :width => 400
-
+  = raw(tag_generator(@book.kind))
+.row.bit-center
+  .pull-left
+    = image_tag @book.image, :class => "img-polaroid", :width => 400
+  .downloadicon.pull-right
+    .iconv.center
+      %i.icon-download.icon-4x
+    .textv.center
+      Download
 %dl.dl-horizontal
-	%dt.book-name
-		Name
-		%i.icon-double-angle-right
-	%dd= @book.name
-	%dt.book-fullname
-		Original Name
-		%i.icon-double-angle-right
-	%dd= @book.fullname or @book.name
-	%dt.book-author
-		Author
-		%i.icon-double-angle-right
-	%dd= authorlink(@book.author)
-	- if @book.description
-		%dt.book-description
-			Content
-			%i.icon-double-angle-right
-		%dd.descriptionfield= @book.description
+  %dt.book-name
+    Name
+    %i.icon-double-angle-right
+  %dd= @book.name
+  %dt.book-fullname
+    Original Name
+    %i.icon-double-angle-right
+  %dd= @book.fullname or @book.name
+  %dt.book-author
+    Author
+    %i.icon-double-angle-right
+  %dd= authorlink(@book.author)
+  - if @book.description
+    %dt.book-description
+      Content
+      %i.icon-double-angle-right
+    %dd.descriptionfield= @book.description
 	
-	%dt.book-links
-		Links
-		%i.icon-double-angle-right
-	%dd
-		= link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228'
+  %dt.book-links
+    Links
+    %i.icon-double-angle-right
+  %dd
+    = link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228'
 			
-	%dt.book-genres
-		Genre
-		%i.icon-double-angle-right
+  %dt.book-genres
+    Genre
+    %i.icon-double-angle-right
 		
-	%dt.flags
-		Flags
-		%i.icon-double-angle-right
+  %dt.flags
+    Flags
+    %i.icon-double-angle-right
 	
 	
 	

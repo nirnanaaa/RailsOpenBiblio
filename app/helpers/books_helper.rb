@@ -7,7 +7,8 @@ module BooksHelper
 		end
 		new.join(" | ")
 	end
-	def author_name(book)
-		book.author.name.split(" ").join("-").downcase
+	def name(book)
+		book.name.split(" ").join("-").downcase
 	end
+	
 end
