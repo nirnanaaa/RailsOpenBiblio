@@ -5,10 +5,10 @@ RPO::Application.routes.draw do
   match '/tag/:tag'							, to: 'tags#show', :via => :get
   
   resources :authors
-  match '/author/by-name/:author'			, to: 'authors#name'
+  match '/author/:author'					, to: 'authors#name'
   
   resources :books
-  match '/book/by-name/:book'				, to: 'books#name'
+  match '/book/:book'						, to: 'books#name'
   
   resources :searches
   match '/search'							, to: 'searches#search', :via => :get
