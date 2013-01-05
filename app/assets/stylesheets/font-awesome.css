@@ -135,6 +135,12 @@ ul.icons li [class*=" icon-"] {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+.icon-6x {
+  font-size: 6em;
+}
+.icon-8x {
+  font-size: 8em;
+}
 .pull-right {
   float: right;
 }

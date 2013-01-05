@@ -5,11 +5,32 @@
 .row.bit-center
   .pull-left
     = image_tag @book.image, :class => "img-polaroid", :width => 400
-  .downloadicon.pull-right
-    .iconv.center
-      %i.icon-download.icon-4x
-    .textv.center
-      Download
+    
+  %a{:href => perform_link(@book,"download")}    
+    .bookicon.pull-right
+      .iconv.center
+        %i.icon-download-alt.icon-6x
+      .textv.center
+        Download
+  %a{:href => perform_link(@book,"book")}    
+    .bookicon.pull-right
+      .iconv.center
+        %i.icon-calendar.icon-6x
+      .textv.center
+        Book    
+  %a{:href => perform_link(@book,"lend")}      
+    .bookicon.pull-right
+      .iconv.center
+        %i.icon-book.icon-6x
+      .textv.center
+        Lend 
+  %a{:href => perform_link(@book,"stats")}      
+    .bookicon.pull-right
+      .iconv.center
+        %i.icon-bar-chart.icon-6x
+      .textv.center
+        Stats
+               
 %dl.dl-horizontal
   %dt.book-name
     Name

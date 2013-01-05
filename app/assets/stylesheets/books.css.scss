@@ -6,8 +6,13 @@
 	max-height: 200px;
 	overflow: auto;
 }
-.downloadicon{
+
+.bookicon{
+  color: #333!important;
   margin-top:90px;
   width: 100px;
-  
 }
+.bookicon:hover{
+  color: #555!important;
+}
+
