@@ -1,6 +1,9 @@
 RPO::Application.routes.draw do
   root to: 'splashes#show'
 
+  resources :tags
+  match '/tag/:tag'							, to: 'tags#show', :via => :get
+  
   resources :authors
   match '/author/by-name/:author'			, to: 'authors#name'
   
