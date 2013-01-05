@@ -25,6 +25,13 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
 	end
 	dimensions
   end
+  def authorlink(author)
+	name = author.name.split(" ").join("-").downcase
+	link_to author.name, "#{Settings.urls.author_url}#{name}"
+  end
+  def booklink(book)
+	book.name.split(" ").join("-").downcase
+  end
   def dateformat
 	Settings.dateformat.split('<').join('%')
   end

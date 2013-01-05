@@ -3,21 +3,21 @@ class Book < ActiveRecord::Base
 	##Add Image to /new!
 	##
 	##
-	attr_accessible :name, :release, :kind, :isbn, :slogan, :author_id, :available, :image
-	
+	attr_accessible :name, :release, :kind, :isbn, :slogan, :author_id, :available, :image, :fullname, :description
+
 	has_attached_file :image, 			:styles => 
-												{ :medium => "400x400",
-												  :thumb => "100x100#",
-												  :small => "150x150>"
+												{ :medium => Settings.image.medium,
+												  :thumb => Settings.image.thumb,
+												  :small => Settings.image.small
 												},
 										:convert_options => {
-												  :thumb => "-quality 75 -strip" 
+												  :thumb => "-quality #{Settings.image.thumb_quality} -strip" 
 															}
 
 	validates_attachment :image,		:size => {:in => 0..Settings.image.max_filesize.kilobytes}
 	validates_length_of :isbn,			:in => 9..13, :allow_nil => true
 	
 	belongs_to :author
-	has_and_belongs_to_many :genres
+	belongs_to :genres
   
 end
