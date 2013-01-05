@@ -9,11 +9,10 @@
 				%td.center Information
 				
 		%tbody
-		- Book.find(:all) do |book|
+		- Book.find(:all).each do |book|
 			%tr.der-gegenschlag
 				%td.preview-image
-					%a
-						= image_tag book.image(:thumb)
+					=link_to( image_tag( book.image(:thumb)), "/author/#{author_name(book)}")
 				%td.list-information
 					%dl.dl-horizontal
 						%dt

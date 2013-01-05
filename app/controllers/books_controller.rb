@@ -5,14 +5,14 @@ class BooksController < ApplicationController
 	def create
 		@newbook = Book.new(params[:book])
 		if @newbook.save!
-			render "show"
+			redirect_to @newbook
 		else
 			render "errors/500"
 		end
 
 	end
 	def show
-	
+		render :text => params[:id]
 	end
 	def index
 	
