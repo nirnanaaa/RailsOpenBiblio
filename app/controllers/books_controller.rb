@@ -11,6 +11,25 @@ class BooksController < ApplicationController
 		end
 
 	end
+	def cap_name(compressed)
+		compressor = compressed.split("-")
+		name = Array.new
+		compressor.each do |cp|
+			name << cp.capitalize
+		end
+		name.join(" ")
+	end
+	def name
+		@book = Book.where('name like ?',"%#{cap_name(params[:book])}%").first
+		
+		if @book
+			render 'show'
+		else
+			@message = "No such book found"
+			render 'errors/404'
+		end
+		
+	end
 	def show
 		render :text => params[:id]
 	end

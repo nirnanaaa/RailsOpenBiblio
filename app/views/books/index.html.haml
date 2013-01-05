@@ -12,7 +12,7 @@
 		- Book.find(:all).each do |book|
 			%tr.der-gegenschlag
 				%td.preview-image
-					=link_to( image_tag( book.image(:thumb)), "/author/#{author_name(book)}")
+					=link_to( image_tag( book.image(:thumb)), "/book/#{author_name(book)}")
 				%td.list-information
 					%dl.dl-horizontal
 						%dt
@@ -26,7 +26,7 @@
 							
 						%dt
 							%i.icon-star{:title => 'author'}
-						%dd= link_to book.author.name, :controller => :authors, :action => :show, :id => book.author.id
+						%dd= link_to book.author.name, "/author/#{author_name(book)}"
 						
 						- if book.kind
 							%dt
