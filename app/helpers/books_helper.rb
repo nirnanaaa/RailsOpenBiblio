@@ -5,6 +5,6 @@ module BooksHelper
 		splitted.each do |s|
 			new << [ link_to(s.capitalize, "/tag/#{s.downcase}") ]
 		end
-		new.join
+		new.join(" | ")
 	end
 end

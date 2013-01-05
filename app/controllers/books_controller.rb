@@ -6,6 +6,8 @@ class BooksController < ApplicationController
 		@newbook = Book.new(params[:book])
 		if @newbook.save!
 			render "show"
+		else
+			render "errors/500"
 		end
 
 	end

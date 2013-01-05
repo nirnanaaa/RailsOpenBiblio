@@ -2,11 +2,11 @@
 	.pull-right
 		= link_to "New Book", new_book_path(), :class => 'btn'
 .row.bit-center
-	%table
+	%table.table-striped.table-hover.table-condensed.hundret.table-bordered
 		%thead
 			%tr
 				%td Preview
-				%td Information
+				%td.center Information
 				
 		%tbody
 		- Book.find(:all) do |book|
@@ -32,6 +32,6 @@
 						- if book.kind
 							%dt
 								%i.icon-th-list{:title => 'tags'}
-							%dd= tag_generator(book.kind)
+							%dd= render(:inline =>tag_generator(book.kind))
 
 		
