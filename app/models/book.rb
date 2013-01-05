@@ -14,10 +14,10 @@ class Book < ActiveRecord::Base
 												  :thumb => "-quality 75 -strip" 
 															}
 
-	validates_attachment :image,		:content_type => { :content_type => "image/jpg" }, :size => {:in => 0..Settings.image.max_filesize.kilobytes}
+	validates_attachment :image,		:size => {:in => 0..Settings.image.max_filesize.kilobytes}
 	validates_length_of :isbn,			:in => 9..13, :allow_nil => true
 	
-	has_one :author
+	belongs_to :author
 	has_and_belongs_to_many :genres
   
 end

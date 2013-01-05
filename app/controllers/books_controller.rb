@@ -4,9 +4,10 @@ class BooksController < ApplicationController
 	end
 	def create
 		@newbook = Book.new(params[:book])
-		if @newbook.save
+		if @newbook.save!
 			render "show"
 		end
+
 	end
 	def show
 	
