@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$('tr').click(function(){
+$('.clickable').click(function(){
 	window.location = $(this).attr('href');
 	return false;
 });

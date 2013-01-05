@@ -18,4 +18,17 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
       message % item
     end
   end
+  def paginations(dbresource, page = nil)
+	count = dbresource.count
+	if page.nil?
+		dimensions = [0..30].to_a
+	end
+	dimensions
+  end
+  def dateformat
+	Settings.dateformat.split('<').join('%')
+  end
+  def order_by_link(sort, by = nil)
+	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)
+  end
 end

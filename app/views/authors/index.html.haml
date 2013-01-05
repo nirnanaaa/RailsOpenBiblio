@@ -1,15 +1,38 @@
+
 .row
+	.pull-right
+		= link_to "New Author", new_author_path(), :class => 'btn'
+.row.bit-center
 	%table.table.table-striped.table-hover
 		%thead
-			%tr.center-table
-				%td #
-				%td Name
-				%td Born
-				%td Died
-		%tbody
-			- @author.each do |author|
-				%tr.clickable{:href=>url_for(:action => :show, :id => author.id)}
+			%th.center-table
+				%td
+					= order_by_link(authors_path(),"name")
+					.order.pull-right
+						%a
+							%i.icon-angle-up
+						%a
+							%i.icon-angle-down
+				%td
+					= order_by_link(authors_path(),"born")
+					.order.pull-right
+						%a
+							%i.icon-angle-up
+						%a
+							%i.icon-angle-down
+				%td
+					= order_by_link(authors_path(),"died")
+					.order.pull-right
+						%a
+							%i.icon-angle-up
+						%a
+							%i.icon-angle-down
+		%tbody	
+			
+			- @query.each do |author|
+				%tr.clickable{:href=>author_path(author.id)}
 					%td.author-thumb= image_tag author.avatar.url(:thumb)
 					%td.author-name= author.name
-					%td.author-born= Time.at(author.born).utc.strftime("%m/%d/%Y")
-					%td.author-born= Time.at(author.died).utc.strftime("%m/%d/%Y")
+					%td.author-born= Time.at(author.born).utc.strftime(dateformat)
+					- if author.died
+						%td.author-born= Time.at(author.died).utc.strftime(dateformat)

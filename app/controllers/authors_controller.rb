@@ -20,6 +20,9 @@ class AuthorsController < ApplicationController
 	end
 	
 	def index
+		if params[:sort_by]
+			order_by_link(authors_path, params[:sort_by])
+		end
 		@count = Author.count+1
 		if params[:end]
 			@end = params[:end]
@@ -31,7 +34,11 @@ class AuthorsController < ApplicationController
 		else
 			@start = 0
 		end
-		@author = Author.where('id < ? AND id > ?',@end, @start)
+		if cookies[:sort_author_by]
+			@query = Author.order("#{cookies[:sort_author_by]} #{cookies[:sort_author_by_order]}").find(:all)
+		else
+			@query = Author.find(:all)
+		end
 		
 	end
 	
@@ -47,4 +54,23 @@ class AuthorsController < ApplicationController
 	def edit
 	
 	end
+	def order_by_link(sort, by = nil)
+		cookies[:sort_author_by] = {
+				:value => by,
+				:expires => 1.year.from_now
+		}
+		if !cookies[:sort_author_by_order]
+			cookies[:sort_author_by_order] = {
+				:value => "ASC",
+				:expires => 1.year.from_now
+		}
+		else
+			cookie = cookies[:sort_author_by_order]
+			if cookie == "ASC"
+				cookies[:sort_author_by_order] = "DESC"
+			else
+				cookies[:sort_author_by_order] = "ASC"
+			end
+		end
+  end
 end
