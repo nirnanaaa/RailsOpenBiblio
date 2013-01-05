@@ -1,0 +1,11 @@
+.row
+	%div{class: "span6 offset1"}
+		= simple_form_for entity, :html => { :class => 'form-horizontal', multipart:true }  do |f|
+			- input_fields.each do |field|
+				= f.input *field 
+		
+			- if hidden_fields
+				- hidden_fields.each do |field|
+					= f.hidden_field *field          
+			.form-actions
+				= f.submit nil, :class => 'btn btn-primary'

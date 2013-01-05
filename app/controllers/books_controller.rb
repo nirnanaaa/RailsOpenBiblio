@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
 	def new
-		@authors = Author.where('id < 100')
 		@book = Book.new
 	end
 	def create
