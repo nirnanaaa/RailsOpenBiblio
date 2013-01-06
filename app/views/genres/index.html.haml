@@ -12,4 +12,4 @@
     - Genre.find(:all).each do |genre|
       %tr.clickable{:href => perform_link(genre,"")}
         %td= genre.name
-        %td= genre.description
+        %td= truncate(genre.description,:length => 220)

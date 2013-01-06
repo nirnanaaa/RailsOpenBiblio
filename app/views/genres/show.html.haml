@@ -1,7 +1,8 @@
 .row.bit-center
   %h1=@genre.name
 .row.bit-center
-  %p=@genre.description
-
+  %p.img-polaroid.genre-description=@genre.description
+%br
+%h4 Books
 - @genre.books.each do |book|
   = book.name
