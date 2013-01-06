@@ -5,7 +5,7 @@
 .row.bit-center
   .pull-left
     = image_tag @book.image, :class => "img-polaroid", :width => 400
-  -if @book.available == 1 
+  -if @book.available
     %a{:href => perform_link(@book,"download")}    
       .bookicon.first-icon.pull-left
         .iconv.center
@@ -55,7 +55,8 @@
     Links
     %i.icon-double-angle-right
   %dd
-    = link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228', :class => 'btn'
+    - @book.links.each do |link|
+      = link_to link.label.capitalize, link.url, :class => 'btn'
     = link_to raw("<i class='icon-plus'></i>"), "#{perform_link(@book,"link/add")}", :class => 'btn pull-right'
   %dt.book-genres
     Genre

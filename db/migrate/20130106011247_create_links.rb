@@ -4,10 +4,10 @@ class CreateLinks < ActiveRecord::Migration
       t.string :label
       t.string :url
       t.text :tooltip
-      t.references :books
+      t.references :book
 
       t.timestamps
     end
-    add_index :links, :books_id
+    add_index :links, :book_id
   end
 end

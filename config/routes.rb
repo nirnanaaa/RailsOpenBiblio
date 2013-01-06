@@ -7,8 +7,9 @@ RPO::Application.routes.draw do
   resources :authors
   match '/author/:author'					, to: 'authors#name'	, :via => :get
   
+  resource :genres
+  
   resources :books
-    
   namespace :book do
     scope ":book" do
         #
@@ -17,7 +18,7 @@ RPO::Application.routes.draw do
         match '/'            , to: 'books#show'    , :via => :get
         
         resources :links
-        match '/link/add'   , to: 'links#new'
+        match '/link/add'   , to: 'links#new'     , :as => "links_path"
         
         resources :lends
         match '/lend'       , to: 'lend#index'

@@ -22,6 +22,7 @@ class Book < ActiveRecord::Base
 	                :isbn, 
 	                :slogan, 
 	                :author_id, 
+	                :genre_id,
 	                :available, 
 	                :image, 
 	                :fullname, 
@@ -40,7 +41,7 @@ class Book < ActiveRecord::Base
 	validates_length_of :isbn,			:in => 9..13, :allow_nil => true
 	
 	belongs_to :author
-	belongs_to :genres
+	belongs_to :genre
 	
   has_many :links
   has_and_belongs_to_many :tags

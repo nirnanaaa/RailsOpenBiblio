@@ -39,4 +39,10 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
   def order_by_link(sort, by = nil)
 	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)
   end
+  def url_name_to_raw(url)
+    url.split("-").join(" ")
+  end
+  def raw_name_to_url(name)
+    name.split(" ").join("-")
+  end
 end

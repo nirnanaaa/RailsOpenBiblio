@@ -1,13 +1,13 @@
 class Book::DownloadsController < ApplicationController
   def index
-    @book = Book.where("name like ?", "%#{params[:book]}%").first
+    @book = Book.where("name like ?", "%#{params[:book].split("-").join(" ")}%").first
     if @book
       if @book.downloadable
           render :text => "Downloading"
       end
       
     else
-      render 'error/404'
+      render 'errors/404'
     end
   end
   def show

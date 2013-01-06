@@ -8,3 +8,5 @@ image:
 urls:
     author_url: /author/
     book_url: /book/
+    link:
+      new:  :!book/link/new

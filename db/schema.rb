@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106111751) do
+ActiveRecord::Schema.define(:version => 20130106115055) do
 
   create_table "authors", :force => true do |t|
     t.integer  "author_id"
@@ -68,12 +68,12 @@ ActiveRecord::Schema.define(:version => 20130106111751) do
     t.string   "label"
     t.string   "url"
     t.text     "tooltip"
-    t.integer  "books_id"
+    t.integer  "book_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "links", ["books_id"], :name => "index_links_on_books_id"
+  add_index "links", ["book_id"], :name => "index_links_on_book_id"
 
   create_table "locations", :force => true do |t|
     t.string   "name"

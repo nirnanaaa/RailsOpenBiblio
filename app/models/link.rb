@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
-  attr_accessible :label, :url, :tooltip, :books_id
+  attr_accessible :label, :url, :tooltip, :book_id
   
   validates :label          , :presence => true,
                               :format => { :with => /\w+/}

@@ -1,0 +1,5 @@
+- elements = [[:label]]
+- elements << [:url]
+- elements << [:book_id,:collection => Book.where('name like ?',"%#{url_name_to_raw(params[:book])}%").collect{|c| [c.name, c.id]}]
+= render partial: 'shared/form_norest', locals: {input_fields: elements,
+  hidden_fields: nil, entity: @link, path: book_links_path}
