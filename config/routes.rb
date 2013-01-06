@@ -17,7 +17,7 @@ RPO::Application.routes.draw do
         match '/'            , to: 'books#show'    , :via => :get
         
         resources :links
-        match '/link/new'   , to: 'links#index'
+        match '/link/add'   , to: 'links#index'
         
         resources :lends
         match '/lend'       , to: 'lend#index'
