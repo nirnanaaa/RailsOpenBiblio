@@ -1,36 +1,37 @@
 .row
-	.pull-right
-		= link_to "New Book", new_book_path(), :class => 'btn'
+  .pull-right
+    = link_to "New Book", new_book_path(), :class => 'btn'
 .row.bit-center
-	%table.table-striped.table-hover.table-condensed.hundret.table-bordered
-		%thead
-			%tr
-				%td Preview
-				%td.center Information
-				
-		%tbody
-		- Book.find(:all).each do |book|
-			%tr.der-gegenschlag
-				%td.preview-image
-					=link_to( image_tag( book.image(:thumb)), "/book/#{name(book)}")
-				%td.list-information
-					%dl.dl-horizontal
-						%dt
-							%i.icon-file{:title => 'name'.capitalize}
-						%dd= book.name
-						
-						- if book.description
-							%dt
-								%i.icon-th{:title => 'description'}
-							%dd= truncate(book.description, :length => 260)
-							
-						%dt
-							%i.icon-star{:title => 'author'}
-						%dd= link_to book.author.name, "/author/#{name(book)}"
-						
-						- if book.kind
-							%dt
-								%i.icon-th-list{:title => 'tags'}
-							%dd= render(:inline =>tag_generator(book.kind))
+  %table.table-striped.table-hover.table-condensed.hundret.table-bordered
+    %thead
+      %tr
+        %td Preview
+        %td.center Information
+        
+    %tbody
+    - Book.find(:all).each do |book|
+      %tr.der-gegenschlag
+        %td.preview-image
+          =link_to( image_tag( book.image(:thumb)), "/book/#{name(book)}")
+        %td.list-information
+          %dl.dl-horizontal
+            %dt
+              %i.icon-file{:title => 'name'.capitalize}
+            %dd= book.name
+            
+            - if book.description
+              %dt
+                %i.icon-th{:title => 'description'}
+              %dd= truncate(book.description, :length => 260)
+              
+            %dt
+              %i.icon-star{:title => 'author'}
+            %dd= link_to book.author.name, "/author/#{name(book)}"
+            
+            - if book.kind
+              %dt
+                %i.icon-th-list{:title => 'tags'}
+              %dd
+                .btn-group=render(:inline =>tag_generator(book.kind))
 
-		
+    
