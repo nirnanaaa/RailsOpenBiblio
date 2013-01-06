@@ -6,6 +6,7 @@ image:
     large: 1920x1080
     thumb_quality: 75
 urls:
+    genre_url: /genre/
     author_url: /author/
     book_url: /book/
     link:

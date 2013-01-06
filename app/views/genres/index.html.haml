@@ -1,0 +1,15 @@
+.row
+  .pull-right
+    = link_to "New Genre", new_genres_path(), :class => 'btn'
+.row.bit-center
+  %table.table-hover.table-bordered.hundret.table-striped
+    %thead
+      %tr
+        %td Name
+        %td Description
+         
+    %tbody
+    - Genre.find(:all).each do |genre|
+      %tr.clickable{:href => perform_link(genre,"")}
+        %td= genre.name
+        %td= genre.description

@@ -1,0 +1,7 @@
+.row.bit-center
+  %h1=@genre.name
+.row.bit-center
+  %p=@genre.description
+
+- @genre.books.each do |book|
+  = book.name

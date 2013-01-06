@@ -8,6 +8,7 @@ RPO::Application.routes.draw do
   match '/author/:author'					, to: 'authors#name'	, :via => :get
   
   resource :genres
+  match '/genre/:genre'           , to: 'genres#index', :via => :get
   
   resources :books
   namespace :book do
