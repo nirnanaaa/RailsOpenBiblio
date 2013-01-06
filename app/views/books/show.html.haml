@@ -8,26 +8,26 @@
   .pull-left
     = image_tag @book.image, :class => "img-polaroid", :width => 400
   -if @book.available
-    %a{:href => perform_link(@book,"download")}    
+    %a{:href => perform_book_link(@book,"download")}    
       .bookicon.first-icon.pull-left
         .iconv.center
           %i.icon-download-alt.icon-6x
         .textv.center
           %b Download
-    %a{:href => perform_link(@book,"lend")}      
+    %a{:href => perform_book_link(@book,"lend")}      
       .bookicon.pull-left
         .iconv.center
           %i.icon-book.icon-6x
         .textv.center
           %b Lend 
-  %a{:href => perform_link(@book,"book")}    
+  %a{:href => perform_book_link(@book,"book")}    
     .bookicon.pull-left
       .iconv.center
         %i.icon-calendar.icon-6x
       .textv.center
         %b Book    
 
-  %a{:href => perform_link(@book,"stats")}      
+  %a{:href => perform_book_link(@book,"stats")}      
     .bookicon.pull-left
       .iconv.center
         %i.icon-bar-chart.icon-6x
