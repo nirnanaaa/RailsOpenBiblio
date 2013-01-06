@@ -9,6 +9,13 @@ RPO::Application.routes.draw do
   
   resources :books
   match '/book/:book'						, to: 'books#name'		, :via => :get
+  namespace :book do
+    match '*download'           , to: 'books#name'
+    match '*lend'               , to: 'books#name'
+    match '*stats'              , to: 'books#name'
+    match '*book'               , to: 'books#name'
+    match '/:book/link/new'     , to: 'books#name'
+  end
   
   match '/user/:name'						, to: 'users#show'		, :via => :get
   match '/user/:name/edit'					, to: 'users#edit'		, :via => :get
