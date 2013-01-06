@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106001123) do
+ActiveRecord::Schema.define(:version => 20130106011247) do
 
   create_table "authors", :force => true do |t|
     t.integer  "author_id"
@@ -62,6 +62,17 @@ ActiveRecord::Schema.define(:version => 20130106001123) do
   end
 
   add_index "genres", ["author_id"], :name => "index_genres_on_author_id"
+
+  create_table "links", :force => true do |t|
+    t.string   "label"
+    t.string   "url"
+    t.text     "tooltip"
+    t.integer  "books_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "links", ["books_id"], :name => "index_links_on_books_id"
 
   create_table "locations", :force => true do |t|
     t.string   "name"
