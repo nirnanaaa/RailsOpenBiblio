@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106011247) do
+ActiveRecord::Schema.define(:version => 20130106111751) do
 
   create_table "authors", :force => true do |t|
     t.integer  "author_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130106011247) do
     t.text     "description"
     t.integer  "release"
     t.integer  "isbn"
-    t.integer  "available"
+    t.boolean  "available"
     t.text     "kind"
     t.text     "slogan"
     t.integer  "location_id"

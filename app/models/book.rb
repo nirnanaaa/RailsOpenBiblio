@@ -1,8 +1,21 @@
+# == Schema Information
+#
+# Table name: books
+#
+# id          :integer      not null, primary
+# name        :string(255)
+# release     :integer(10-11)
+# kind        :text
+# isbn        :integer(9-13)
+# slogan      :text
+# available   :boolean                         
+# image       :image
+# fullname    :string(255)
+# description :text
+# downloadable:boolean
+#  
 class Book < ActiveRecord::Base
-	##
-	##Add Image to /new!
-	##
-	##
+
 	attr_accessible :name,
 	                :release,
 	                :kind, 
@@ -28,5 +41,7 @@ class Book < ActiveRecord::Base
 	
 	belongs_to :author
 	belongs_to :genres
+  has_and_belongs_to_many :links
+  has_and_belongs_to_many :tags
   
 end
