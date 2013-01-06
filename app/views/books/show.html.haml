@@ -56,7 +56,7 @@
     %i.icon-double-angle-right
   %dd
     = link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228', :class => 'btn'
-			
+    = link_to raw("<i class='icon-edit'></i>"), "#{perform_link(@book,"link/add")}", :class => 'btn pull-right'
   %dt.book-genres
     Genre
     %i.icon-double-angle-right

@@ -7,7 +7,7 @@
 - Online reading
 - Show Author
 - Show User
-- Show Book
+- Show Book 
 - Show Genre
 - Show Tags
 - Sort by Author/Added/Name/Status
@@ -17,7 +17,11 @@
 - Mark a book as lend(ACL)
 - Delete book (ACL)
 - Edit book (ACL)
-
+- Edit author (ACL)
+- Edit User (ACL)
+- Edit Genre (ACL)
+- Edit Tags (ACL)
+- Edit Links (ACL)
 - Show currently available books
 - Preorder
 - Amazon search with link to amazon/price
