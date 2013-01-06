@@ -5,31 +5,32 @@
 .row.bit-center
   .pull-left
     = image_tag @book.image, :class => "img-polaroid", :width => 400
-    
-  %a{:href => perform_link(@book,"download")}    
-    .bookicon.pull-right
-      .iconv.center
-        %i.icon-download-alt.icon-6x
-      .textv.center
-        Download
+  -if @book.available == 1 
+    %a{:href => perform_link(@book,"download")}    
+      .bookicon.first-icon.pull-left
+        .iconv.center
+          %i.icon-download-alt.icon-6x
+        .textv.center
+          %b Download
+    %a{:href => perform_link(@book,"lend")}      
+      .bookicon.pull-left
+        .iconv.center
+          %i.icon-book.icon-6x
+        .textv.center
+          %b Lend 
   %a{:href => perform_link(@book,"book")}    
-    .bookicon.pull-right
+    .bookicon.pull-left
       .iconv.center
         %i.icon-calendar.icon-6x
       .textv.center
-        Book    
-  %a{:href => perform_link(@book,"lend")}      
-    .bookicon.pull-right
-      .iconv.center
-        %i.icon-book.icon-6x
-      .textv.center
-        Lend 
+        %b Book    
+
   %a{:href => perform_link(@book,"stats")}      
-    .bookicon.pull-right
+    .bookicon.pull-left
       .iconv.center
         %i.icon-bar-chart.icon-6x
       .textv.center
-        Stats
+        %b Stats
                
 %dl.dl-horizontal
   %dt.book-name
@@ -54,7 +55,7 @@
     Links
     %i.icon-double-angle-right
   %dd
-    = link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228'
+    = link_to 'Amazon', 'http://www.amazon.com/Kill-Shot-American-Assassin-Thriller/dp/1416595228', :class => 'btn'
 			
   %dt.book-genres
     Genre
