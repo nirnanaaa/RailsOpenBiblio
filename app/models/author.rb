@@ -7,10 +7,10 @@ class Author < ActiveRecord::Base
 	                               :avatar
 
 	has_attached_file :avatar, 			:styles => { 
-	                                             :medium => "400x400>", 
-	                                             :thumb => "100x100>",
-	                                             :small => "",
-	                                             :large => "" 
+	                                             :medium => Settings.image.medium,
+                                               :thumb => Settings.image.thumb,
+                                               :small => Settings.image.small,
+	                                             :large => Settings.image.large
 	                                           }
 
 	validates_attachment :avatar,		:size => {

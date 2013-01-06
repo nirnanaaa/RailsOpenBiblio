@@ -1,2 +1,13 @@
 image:
-    max_filesize: 20
+    max_filesize: 2048
+    thumb: 100x100#
+    small: 150x150>
+    medium: 400x400
+    large: 1920x1080
+    thumb_quality: 75
+urls:
+    genre_url: /genre/
+    author_url: /author/
+    book_url: /book/
+    link:
+      new:  :!book/link/new

@@ -1,61 +1,61 @@
 .row
-	.span4
-		.author-image.img-polaroid
-			= image_tag @author.avatar.url
-	.span8
-		%dl.author-info.dl-horizontal
-			%dt
-				%i.icon-user{:title=>'author'}
-			%dd= @author.name
-			- if @author.born
-				%dt
-					%i.icon-star{:title=>'born'}
-				%dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
-			
-			- if @author.died
-				%dt
-					%i.icon-plus{:title=>'died'}
-				%dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
-				
-			
-			- if @author.biography
-				%dt
-					%i.icon-book{:title=>'biography'}
-				%dd.author-biography
-					%p
-						= @author.biography
+  .span4
+    .author-image.img-polaroid
+      = link_to(image_tag(@author.avatar.url), @author.avatar.url(:large), :target => "_blank")
+  .span8
+    %dl.author-info.dl-horizontal
+      %dt
+        %i.icon-user{:title=>'author'}
+      %dd= @author.name
+      - if @author.born
+        %dt
+          %i.icon-star{:title=>'born'}
+        %dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
+      
+      - if @author.died
+        %dt
+          %i.icon-plus{:title=>'died'}
+        %dd= Time.at(@author.born).utc.strftime("%m/%d/%Y")
+        
+      
+      - if @author.biography
+        %dt
+          %i.icon-book{:title=>'biography'}
+        %dd.author-biography
+          %p
+            = @author.biography
 
 .row.low-margin
-	%table.table.table-condensed.table-hover
-		%thead
-			%tr
-				%td Name
-				%td.small Released
-				%td.small Actions
-		%tbody
-			
-			- @author.books.each do |book|
-				%a{:href=>"#"}
-				- if book.available == 0
-					%tr.error
-						%td
-							%a{:href => "#"}= book.name
-						%td= Time.at(book.release).utc.strftime("%m/%d/%Y")
-						%td
-							%a{:href=>'#'}
-								%i.icon-trash
-							&nbsp;| 
-							%a{:href=>'#'}
-								%i.icon-pencil
-						
-				- else
-					%tr.success
-						%td
-							%a{:href => "#"}= book.name
-						%td= Time.at(book.release).utc.strftime("%m/%d/%Y")
-						%td
-							%a{:href=>'#'}
-								%i.icon-trash
-							&nbsp;| 
-							%a{:href=>'#'}
-								%i.icon-pencil
+  %table.table.table-condensed.table-hover
+    %thead
+      %tr
+        %td Name
+        %td.small Released
+        %td.small Actions
+    %tbody
+      
+      - @author.books.each do |book|
+        %a{:href=>"#"}
+        - if book.available == 0
+          %tr.error
+            %td
+              %a{:href => "#"}= book.name
+            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
+            %td
+              %a{:href=>'#'}
+                %i.icon-trash
+              &nbsp;| 
+              %a{:href=>'#'}
+                %i.icon-pencil
+            
+        - else
+          %tr.success
+            %td
+              %a{:href => "#"}= book.name
+            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
+            %td
+              %a{:href=>'#'}
+                %i.icon-trash
+              &nbsp;| 
+              %a{:href=>'#'}
+                %i.icon-pencil

@@ -1,5 +1,5 @@
 image:
-    max_filesize: 20
+    max_filesize: 2048
     thumb: 100x100#
     small: 150x150>
     medium: 400x400
