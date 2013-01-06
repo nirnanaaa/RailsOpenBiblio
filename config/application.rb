@@ -35,17 +35,7 @@ module RPO
 
     # Configure the default encoding used in templates for Ruby 1.9.
 	# config.active_record.whitelist_attributes = false
-    config.encoding = "utf-8"
-	
-	#----IMAGES----#
-	#Max upload filesize (KB) 
-	#for MB use just use 20*1024 for 20M
-	config.image_maxfilesize = 20
-	
-	#Max files (0=unlimited) NYI
-	config.image_maxfiles = 0
-	
-	#---/IMAGES----#
+    config.assets.prefix = "public/assets"
 	
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

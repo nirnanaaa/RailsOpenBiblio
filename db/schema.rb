@@ -57,12 +57,9 @@ ActiveRecord::Schema.define(:version => 20130106115055) do
   create_table "genres", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "author_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-
-  add_index "genres", ["author_id"], :name => "index_genres_on_author_id"
 
   create_table "links", :force => true do |t|
     t.string   "label"
