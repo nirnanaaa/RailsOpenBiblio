@@ -8,12 +8,31 @@ RPO::Application.routes.draw do
   match '/author/:author'					, to: 'authors#name'	, :via => :get
   
   resources :books
-  match '/book/:book'						, to: 'books#name'		, :via => :get
-  match '/book/:book/download'  , to: 'book/downloads#index'
-  match '/book/:book/lend'      , to: 'book/lends#index'
-  match '/book/:book/book'      , to: 'book/books#index'
-  match '/book/:book/stats'     , to: 'book/stats#index'
-  match '/book/:book/link/new'  , to: 'book/links#index'
+    
+  namespace :book do
+    scope ":book" do
+        #
+        #Root Path of books view page. Shows the books mainpage
+        #
+        match '/'            , to: 'books#show'    , :via => :get
+        
+        resources :links
+        match '/link/new'   , to: 'links#index'
+        
+        resources :lends
+        match '/lend'       , to: 'lend#index'
+    
+        resources :stats
+        match '/stats'      , to: 'stats#index'
+    
+        resource :downloads
+        match '/download'   , to: 'downloads#index'
+    
+        resources :books
+        match '/book'       , to: 'books#index'
+    end
+  end
+
 
   match '/user/:name'						, to: 'users#show'		, :via => :get
   match '/user/:name/edit'					, to: 'users#edit'		, :via => :get
