@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130106011247) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "fullname"
+    t.boolean  "downloadable"
   end
 
   add_index "books", ["author_id"], :name => "index_books_on_author_id"

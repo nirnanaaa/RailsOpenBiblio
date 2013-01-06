@@ -1,0 +1,10 @@
+image:
+    max_filesize: 20
+    thumb: 100x100#
+    small: 150x150>
+    medium: 400x400
+    large: 1920x1080
+    thumb_quality: 75
+urls:
+    author_url: /author/
+    book_url: /book/
