@@ -16,7 +16,7 @@ RPO::Application.routes.draw do
         #
         #Root Path of books view page. Shows the books mainpage
         #
-        match '/'            , to: 'books#show'    , :via => :get
+        match '/'            , to: 'books#show'    , :via => :get,    :as => "book"
         
         resources :links
         match '/link/add'   , to: 'links#new'     , :as => "links_path"
