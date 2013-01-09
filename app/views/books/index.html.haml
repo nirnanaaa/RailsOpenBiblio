@@ -23,10 +23,10 @@
               %dt
                 %i.icon-th{:title => 'description'}
               %dd= truncate(book.description, :length => 260)
-              
-            %dt
-              %i.icon-star{:title => 'author'}
-            %dd= link_to book.author.name, "/author/#{name(book)}"
+            - if book.author && book.author.name
+              %dt
+                %i.icon-star{:title => 'author'}
+              %dd= link_to book.author.name, "/author/#{name(book)}"
             
             - if book.kind
               %dt

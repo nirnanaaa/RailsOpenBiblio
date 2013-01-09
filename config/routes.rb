@@ -2,16 +2,16 @@ RPO::Application.routes.draw do
   root :to => 'splashes#show'
 
   resources :tags
-  match '/tag/:tag'							, to: 'tags#show'		, :via => :get
+  match '/tag/:tag'							  , to: 'tags#show'	                 , :via => :get
   
   resource :genres
-  match '/genre/:genre'           , to: 'genres#index', :via => :get
+  match '/genre/:genre'           , to: 'genres#index'                , :via => :get
    
   resources :authors
-  match '/author/:author'					, to: 'authors#name'	, :via => :get
+  
   namespace :author do
     scope ":author" do
-      
+      match '/'                   , to: 'infos#show'                  ,:via => :get,  :as => "info"
       resources :infos,           :only => [:show]
     end
   end
@@ -24,22 +24,22 @@ RPO::Application.routes.draw do
         #
         #Root Path of books view page. Shows the books mainpage
         #
-        match '/'           , to: 'books#show'    , :via => :get,    :as => "book_n"
+        match '/'           , to: 'books#show'                                      , :via => :get,    :as => "root"
         
         resources :links
-        match '/link/add'   , to: 'links#new'     , :as => "links_path"
+        match '/link/add'   , to: 'links#new'                                       ,:as  => "links_path"
         
         resources :lends
-        match '/lend'       , to: 'lend#index'
+        match '/lend'       , to: 'lend#index'                                      ,:as  => "book_lend"
     
         resources :stats
-        match '/stats'      , to: 'stats#index'
+        match '/stats'      , to: 'stats#index'                                     ,:as  => "book_stats"
     
         resource :downloads
-        match '/download'   , to: 'downloads#index'
+        match '/download'   , to: 'downloads#index'                                 ,:as  => "book_download"
     
         resources :books
-        match '/book'       , to: 'books#index'
+        match '/book'       , to: 'books#index'                                     ,:as  => "book_book"
     end
   end
 

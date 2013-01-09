@@ -1,9 +1,8 @@
-= simple_form_for @author, :html => { :class => 'form-horizontal', multipart:true }  do |f|
-	.form-actions
-		= f.input :name
-		= f.input :born
-		= f.input :died
-		= f.input :avatar, :as => :file, :label => "Image"
-		= f.input :biography, :as => :text
-		= f.submit nil, :class => 'btn btn-primary'
-		= link_to "Cancel", nil, :class => 'btn'
+.row
+  - elements = [[:name], [:born, :as => :date_picker ], [:died, :as => :date_picker ]]
+  - elements << [:avatar, :as => :file_field, :label => "Image"]
+  - elements << [:biography, :as => :text]
+
+  = render partial: 'shared/form_no_horizontal', locals: {input_fields: elements,
+    hidden_fields: nil, entity: @author}
+
