@@ -7,14 +7,24 @@ class Book::BooksController < ApplicationController
     end
     name.join(" ")
   end
+  
   def show
     @book = Book.where('name like ?',"%#{cap_name(params[:book])}%").first
     
     if @book
-      render 'books/show'
+      if params[:format] == 'json'
+        render :text => @book.to_json(:except => [:created_at,
+                                                  :updated_at, 
+                                                  :book_id,
+                                                  :location_id
+                                                 ])
+      else
+        render 'books/show'
+      end
+      
     else
-      @message = "No such book found"
-      render 'errors/404'
+      @message = "No such book"
+      #render 'errors/404'
     end
     
   end
