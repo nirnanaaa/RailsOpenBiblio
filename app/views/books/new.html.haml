@@ -1,4 +1,4 @@
-- elements = [[:name], [:release, :as => :integer], [:kind, :as => :string, :label => 'Tags']]
+- elements = [[:name], [:release, :as => :date], [:kind, :as => :string, :label => 'Tags']]
 - elements << [:fullname, :label => "Original Name"]
 - elements << [:author_id,:collection => Author.find(:all).collect{|c| [c.name, c.id]}, :prompt => "Select the Author"]
 - elements << [:genre_id,:collection => Genre.find(:all).collect{|c| [c.name, c.id]}, :prompt => "Select the Genre"]

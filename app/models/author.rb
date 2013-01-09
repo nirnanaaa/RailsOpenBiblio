@@ -23,10 +23,7 @@ class Author < ActiveRecord::Base
 	                                
   validates :name               , :presence => true,
                                   :on => :save
-                                
 
-	validates :born						, :numericality => { :only_integer => true, :allow_nil => true}
-	validates :died						, :numericality => { :only_integer => true, :allow_nil => true}
 	
 	has_many :books
 	validates_associated :books

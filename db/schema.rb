@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106115055) do
+ActiveRecord::Schema.define(:version => 20130109183528) do
 
   create_table "authors", :force => true do |t|
     t.integer  "author_id"
     t.string   "name"
     t.text     "biography"
-    t.integer  "born"
-    t.integer  "died"
+    t.datetime "born"
+    t.datetime "died"
     t.integer  "books"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20130106115055) do
     t.integer  "book_id"
     t.string   "name"
     t.text     "description"
-    t.integer  "release"
+    t.datetime "release"
     t.integer  "isbn"
     t.boolean  "available"
     t.text     "kind"
@@ -57,9 +57,12 @@ ActiveRecord::Schema.define(:version => 20130106115055) do
   create_table "genres", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "author_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "genres", ["author_id"], :name => "index_genres_on_author_id"
 
   create_table "links", :force => true do |t|
     t.string   "label"

@@ -4,11 +4,19 @@ RPO::Application.routes.draw do
   resources :tags
   match '/tag/:tag'							, to: 'tags#show'		, :via => :get
   
-  resources :authors
-  match '/author/:author'					, to: 'authors#name'	, :via => :get
-  
   resource :genres
   match '/genre/:genre'           , to: 'genres#index', :via => :get
+   
+  resources :authors
+  match '/author/:author'					, to: 'authors#name'	, :via => :get
+  namespace :author do
+    scope ":author" do
+      
+      resources :infos,           :only => [:show]
+    end
+  end
+
+  
   
   resources :books
   namespace :book do
@@ -16,7 +24,7 @@ RPO::Application.routes.draw do
         #
         #Root Path of books view page. Shows the books mainpage
         #
-        match '/'            , to: 'books#show'    , :via => :get,    :as => "book"
+        match '/'           , to: 'books#show'    , :via => :get,    :as => "book_n"
         
         resources :links
         match '/link/add'   , to: 'links#new'     , :as => "links_path"

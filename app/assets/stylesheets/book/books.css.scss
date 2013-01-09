@@ -7,4 +7,12 @@ dt,dd{
   margin-top: $dd_margin;
   
 }
-
+.image-book-cover{
+  width: 404px;
+  
+}
+.image-book-cover img{
+  max-width: 400px;
+  max-height: 500px;
+  
+}

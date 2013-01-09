@@ -5,8 +5,8 @@
     = raw(tag_generator(@book.kind))
   
 .row.bit-center
-  .pull-left
-    = image_tag @book.image, :class => "img-polaroid", :width => 400
+  .pull-left.image-book-cover
+    = image_tag @book.image, :class => "img-polaroid"
   -if @book.available
     %a{:href => perform_book_link(@book,"download")}    
       .bookicon.first-icon.pull-left
@@ -36,28 +36,53 @@
                
 %dl.dl-horizontal
 
+  -###############
+  -# book's name #
+  -###############
   %dt.book-name
-    Name
+    =t('homepage.name').capitalize
     %i.icon-double-angle-right
   %dd= @book.name
   
-  %dt.book-fullname
-    Original Name
-    %i.icon-double-angle-right
-  %dd= @book.fullname or @book.name
+  -#######################
+  -# book's release date #
+  -#######################
+  - if @book.release
+    %dt.book-release
+      =t('book.labels.release').capitalize
+      %i.icon-double-angle-right
+    %dd= Time.at(@book.release).utc.strftime(t('date.formats.default'))
   
+  -#############################
+  -# book's full/original name #
+  -#############################
+  - if @book.fullname
+    %dt.book-fullname
+      =t('book.labels.orig_name').capitalize
+      %i.icon-double-angle-right
+    %dd= @book.fullname or @book.name
+  
+  -#################
+  -# book's author #
+  -#################
   %dt.book-author
-    Author
+    =t('author.author').capitalize
     %i.icon-double-angle-right
   %dd= authorlink(@book.author)
-  
-  %dt.book-description
-    Content
-    %i.icon-double-angle-right
-  %dd.descriptionfield= @book.description
-  
+  -######################
+  -# book's description #
+  -######################
+  - if @book.description
+    %dt.book-description
+      =t('book.labels.content').capitalize
+      %i.icon-double-angle-right
+    %dd.descriptionfield= @book.description
+    
+  -##############
+  -# book links #
+  -##############
   %dt.book-links
-    Links
+    =t('book.labels.links').capitalize
     %i.icon-double-angle-right
   %dd
     &nbsp;
@@ -66,13 +91,21 @@
       
     = link_to raw("<i class='icon-plus'></i>"), "#{perform_book_link(@book,"/link/add")}", :class => 'btn pull-right'
     
-  %dt.book-genres
-    Genre
-    %i.icon-double-angle-right
-  %dd= link_to @book.genre.name, perform_link(@book.genre,"")
-    
+  -################
+  -# book's genre #
+  -################
+  - if @book.genre && @book.genre.name
+    %dt.book-genres
+      =t('book.labels.genre').capitalize
+      %i.icon-double-angle-right
+    %dd= link_to @book.genre.name, perform_link(@book.genre,"")
+  
+  -##################################
+  -# book's flags                   #
+  -# e.g. available or downloadable #
+  -##################################
   %dt.flags
-    Flags
+    =t('book.labels.flags').capitalize
     %i.icon-double-angle-right
   %dd test
   
