@@ -40,7 +40,7 @@ RPO::Application.routes.draw do
   match '/user/:name/edit'					, to: 'users#edit'		, :via => :get
   
   resources :searches
-  match '/search'							, to: 'searches#search'	, :via => :get
+  match '/search'							, to: 'searches#search'	, :via => :get, :as => "search"
   
   resources :sessions						, only: [:new, :create, :destroy]
   match '/signin'							, to: 'sessions#create'

@@ -1,1 +1,5 @@
 dateformat: <m/<d/<Y
+page:
+  author: Florian Kasper
+  encoding: utf-8
+  logo: "layout/logo_top.png"

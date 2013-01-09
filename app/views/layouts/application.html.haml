@@ -1,12 +1,12 @@
 !!!
-%html{:lang => "en"}
+%html{:lang => I18n.locale}
 	%head
-		%title= RPO
+		%title= @title or t 'homepage.title'
 		
 		
-		%meta{:charset => "utf-8"}
+		%meta{:charset => Settings.page.encoding}
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-		%meta{:name => "author", :content => "author"}
+		%meta{:name => "author", :content => Settings.page.author}
 		
 		= stylesheet_link_tag  "application", :media => "all"
 
@@ -15,28 +15,28 @@
 		#wrapper.container
 			.row
 				.logo
-					= image_tag "layout/logo_top.png"
+					= image_tag Settings.page.logo
 			%nav.row.navbar
 				%nav.navbar-inner
 					%ul.nav.pull-left
 						%li
-							= link_to 'Home', root_path
+							= link_to t('menu.home'), root_path
 						%li.divider-vertical
 						%li
-							= link_to 'Books', '/books'
+							= link_to t('menu.books'), books_path
 						%li.divider-vertical
 						%li
-							= link_to 'Authors', '/authors'	
+							= link_to t('menu.authors'), authors_path
 						%li.divider-vertical
 						%li
-							= link_to 'Genres', '/genres'	
+							= link_to t('menu.genres'), genres_path
 						%li.divider-vertical
 						%li
-							= link_to 'Tags', '/tags'	
+							= link_to t('menu.tags'), tags_path
 													
 					%ul.nav.pull-right
-						%form.navbar-search.pull-right{:method=>'GET', :action=>'/search'}
-							%input.search-query.search{:type=>'text',:placeholder=>"Search",:name=>"keyword"}
+						%form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
+							%input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
 			
 			- if flash_messages.nil?
 				.row.warning.alert.alert-block.alert-info

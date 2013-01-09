@@ -1,12 +1,12 @@
 .row
   .pull-right
-    = link_to "New Book", new_book_path(), :class => 'btn'
+    = link_to t('book.new').capitalize, new_book_path(), :class => 'btn'
 .row.bit-center
   %table.table-striped.table-hover.table-condensed.hundret.table-bordered
     %thead
       %tr
-        %td Preview
-        %td.center Information
+        %td= t 'preview'.capitalize
+        %td.center= t 'information'.capitalize
         
     %tbody
     - Book.find(:all).each do |book|

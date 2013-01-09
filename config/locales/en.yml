@@ -1,5 +1,20 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  homepage:
+    title: RailsOpenBiblio
+    search: search
+    
+  preview: preview
+  menu:
+    home: Home
+    books: Books
+    authors: Authors
+    genres: Genres
+    tags: Tags
+  book:
+    new: new book
+    delete: delete book
+    edit: edit book
+    book: book
+    
+  author:
+    author: author
