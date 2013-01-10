@@ -50,6 +50,10 @@ RPO::Application.routes.draw do
   
   #/user
   namespace :user do
+    resources :sessions
+    match '/signin'               , to: 'sessions#create'
+    match '/signout'              , to: 'sessions#destroy'
+    
     scope ":name" do
         #Root path
         match '/'               , to: 'users#show'                                  , :via => :get,       :as => "root"
@@ -63,10 +67,6 @@ RPO::Application.routes.draw do
   
   resources :searches
   match '/search'							  , to: 'searches#search'	                            , :via => :get,       :as => "search"
-  
-  resources :sessions						, only: [:new, :create, :destroy]
-  match '/signin'							  , to: 'sessions#create'
-  match '/signout'							, to: 'session#destroy'
   
   
 end
