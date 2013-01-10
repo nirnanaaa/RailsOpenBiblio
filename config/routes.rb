@@ -2,7 +2,7 @@ RPO::Application.routes.draw do
   root :to => 'splashes#show'
 
   resources :tags
-  match '/tag/:tag'							  , to: 'tags#show'	                 , :via => :get
+  match '/tag/:tag'							  , to: 'tags#show'	                 , :via => :get,  :as => "tag_view"
   
   resource :genres
   match '/genre/:genre'           , to: 'genres#index'                , :via => :get

@@ -1,10 +1,6 @@
-.row
-  .pull-right
-    = link_to "New Tag", new_tag_path(), :class => 'btn'
-    
 .row.bit-center
   %h1 Tags
 
 .row.bit-center
   - Tag.find(:all).each do |tag|
-    = tag.name
+    = link_to tag.name tags_path(tag.name)
