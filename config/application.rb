@@ -36,7 +36,7 @@ module RPO
     # Configure the default encoding used in templates for Ruby 1.9.
 	# config.active_record.whitelist_attributes = false
     config.assets.prefix = "public/assets"
-	
+    
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
