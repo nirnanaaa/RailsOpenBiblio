@@ -25,6 +25,7 @@ class TagsController < ApplicationController
 	  
 	end
 	def index
+	  @tag = Tag.limit(Settings.tags.maxresults).find(:all)
 	  
 	end
 end
