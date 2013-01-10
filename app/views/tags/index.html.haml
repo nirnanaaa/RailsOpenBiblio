@@ -2,5 +2,6 @@
   %h1 Tags
 
 .row.bit-center
-  - Tag.find(:all).each do |tag|
-    = link_to tag.name, tag_view_path(tag.name), :class => :btn
+  %p
+    - Tag.find(:all).each do |tag|
+      = link_to tag.name, tag_view_path(tag.name), :class => 'btn fixed-tag-width'
