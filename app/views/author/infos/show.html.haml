@@ -1,0 +1,60 @@
+.row.bit-center
+  %h1= @author.name
+.row
+  .span4
+    .author-image.img-polaroid
+      = link_to(image_tag(@author.avatar.url), @author.avatar.url(:large), :target => "_blank")
+  .span8
+    %dl.author-info.dl-horizontal
+      - if @author.born
+        %dt
+          %i.icon-star{:title=>'born'}
+        %dd= l @author.born, :format => :short
+      
+      - if @author.died
+        %dt
+          %i.icon-plus{:title=>'died'}
+        %dd= l @author.died, :format => :short
+        
+      
+      - if @author.biography
+        %dt
+          %i.icon-book{:title=>'biography'}
+        %dd.author-biography
+          %p
+            = @author.biography
+
+.row.low-margin
+  %table.table.table-condensed.table-hover
+    %thead
+      %tr
+        %td Name
+        %td.small Released
+        %td.small Actions
+    %tbody
+      
+      - @author.books.each do |book|
+        %a{:href=>"#"}
+        - if book.available == 0
+          %tr.error
+            %td
+              %a{:href => "#"}= book.name
+            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
+            %td
+              %a{:href=>'#'}
+                %i.icon-trash
+              &nbsp;| 
+              %a{:href=>'#'}
+                %i.icon-pencil
+            
+        - else
+          %tr.success
+            %td
+              %a{:href => "#"}= book.name
+            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
+            %td
+              %a{:href=>'#'}
+                %i.icon-trash
+              &nbsp;| 
+              %a{:href=>'#'}
+                %i.icon-pencil

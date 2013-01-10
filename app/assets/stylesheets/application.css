@@ -48,3 +48,6 @@ textarea{
 .inline-div{
 	display:inline
 }
+.hidden{
+	display: none;
+}

@@ -33,9 +33,6 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
 	name = book.name.split(" ").join("-").downcase
 	link_to book.name, "#{Settings.urls.book_url}#{name}"
   end
-  def dateformat
-	Settings.dateformat.split('<').join('%')
-  end
   def order_by_link(sort, by = nil)
 	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)
   end

@@ -5,7 +5,6 @@ class Author < ActiveRecord::Base
 	                               :born, 
 	                               :died, 
 	                               :avatar
-
 	has_attached_file :avatar, 			:styles => { 
 	                                             :medium => Settings.image.medium,
                                                :thumb => Settings.image.thumb,

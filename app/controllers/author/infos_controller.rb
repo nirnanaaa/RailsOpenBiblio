@@ -9,18 +9,7 @@ class Author::InfosController < ApplicationController
     respond_to do |f|
       f.html { render }
       f.xml { render :xml => @author}
-      f.json { render :text => render_json_output(@author)}
+      f.json { render :text => @author.to_json}
     end
-  end
-  def render_json_output(author)
-    
-    author.to_json(:except => [:created_at,
-                               :updated_at, 
-                               :author_id,
-                               :avatar_updated_at,
-                               :avatar_content_type,
-                               :avatar_file_name,
-                               :avatar_file_size
-                               ])
   end
 end

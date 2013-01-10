@@ -26,6 +26,11 @@ en:
       
   author:
     author: author
+    born: born
+    died: died
+    new: new author
+    edit: edit author
+    delete: delete author
   
   date:
     abbr_day_names:

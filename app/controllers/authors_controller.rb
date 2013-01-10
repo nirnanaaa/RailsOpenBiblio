@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
 	def create
+	  params[:author].delete(:visual)
 		@author = Author.new(params[:author])
 		
 		if @author.save
