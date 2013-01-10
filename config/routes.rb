@@ -7,7 +7,7 @@ RPO::Application.routes.draw do
   resource :genres
   match '/genre/:genre'           , to: 'genres#index'                , :via => :get, :as => "genre_view"
    
-  resources :authors              , :only => [:index,:destroy,:edit]
+  resources :authors              , :only => [:index,:destroy,:edit,:create, :new]
   
   namespace :author do
     scope ":author" do
