@@ -5,9 +5,9 @@ RPO::Application.routes.draw do
   match '/tag/:tag'							  , to: 'tags#show'	                 , :via => :get,  :as => "tag_view"
   
   resource :genres
-  match '/genre/:genre'           , to: 'genres#index'                , :via => :get
+  match '/genre/:genre'           , to: 'genres#index'                , :via => :get, :as => "genre_view"
    
-  resources :authors
+  resources :authors              , :only => [:index,:destroy,:edit]
   
   namespace :author do
     scope ":author" do
