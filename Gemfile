@@ -28,3 +28,4 @@ gem 'simple_form'
 gem 'paperclip'
 gem "rails_config"
 gem "thin"
+gem "sha3"

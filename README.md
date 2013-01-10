@@ -2,10 +2,16 @@
 ##Just a senseless name
 
 ###Must have
-- LDAP/SQL/SQLITE/POSTGRES/MONGO Backend
+- Backend
+>	>	LDAP
+>	>	MYSQL
+>	>	PostGres
+>	>	MongoID
+>	>	SQlite3
+
 - Search by Name/User/Genre/Location/Author
 - Online reading
-- Show Author
+- Show Author 
 - Show User
 - Show Book 
 - Show Genre
