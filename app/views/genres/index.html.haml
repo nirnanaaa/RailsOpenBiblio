@@ -1,6 +1,6 @@
 .row
   .pull-right
-    = link_to "New Genre", new_genres_path(), :class => 'btn'
+    = link_to t('genre.new').capitalize, new_genres_path(), :class => 'btn'
 .row.bit-center
   %table.table-hover.table-bordered.hundret.table-striped
     %thead
@@ -10,6 +10,6 @@
          
     %tbody
     - Genre.find(:all).each do |genre|
-      %tr.clickable{:href => perform_link(genre,"")}
+      %tr.clickable
         %td= genre.name
         %td= truncate(genre.description,:length => 220)
