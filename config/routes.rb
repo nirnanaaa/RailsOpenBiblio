@@ -11,8 +11,8 @@ RPO::Application.routes.draw do
   
   namespace :author do
     scope ":author" do
-      match '/'                   , to: 'infos#show'                  ,:via => :get,  :as => "info"
-      resources :infos,           :only => [:show]
+      match '/'                   , to: 'infos#show'                  , :via => :get,  :as => "info"
+      resources :infos,           :only => [:show]                    
     end
   end
 
@@ -27,19 +27,19 @@ RPO::Application.routes.draw do
         match '/'           , to: 'books#show'                                      , :via => :get,    :as => "root"
         
         resources :links
-        match '/link/add'   , to: 'links#new'                                       ,:as  => "links_path"
+        match '/link/add'   , to: 'links#new'                                       ,:as  => "links"
         
         resources :lends
-        match '/lend'       , to: 'lend#index'                                      ,:as  => "book_lend"
+        match '/lend'       , to: 'lends#index'                                      ,:as  => "lend"
     
         resources :stats
-        match '/stats'      , to: 'stats#index'                                     ,:as  => "book_stats"
+        match '/stats'      , to: 'stats#index'                                     ,:as  => "stats"
     
         resource :downloads
-        match '/download'   , to: 'downloads#index'                                 ,:as  => "book_download"
+        match '/download'   , to: 'downloads#index'                                 ,:as  => "download"
     
         resources :books
-        match '/book'       , to: 'books#index'                                     ,:as  => "book_book"
+        match '/book'       , to: 'books#index'                                     ,:as  => "book"
     end
   end
 

@@ -8,26 +8,26 @@
   .pull-left.image-book-cover
     = image_tag @book.image, :class => "img-polaroid"
   -if @book.available
-    %a{:href => perform_book_link(@book,"download")}    
+    %a{:href => book_download_path(:book =>  raw_name_to_url( @book.name ))}    
       .bookicon.first-icon.pull-left
         .iconv.center
           %i.icon-download-alt.icon-6x
         .textv.center
           %b Download
-    %a{:href => perform_book_link(@book,"lend")}      
+    %a{:href => book_lend_path(:book =>  raw_name_to_url( @book.name ))}       
       .bookicon.pull-left
         .iconv.center
           %i.icon-book.icon-6x
         .textv.center
           %b Lend 
-  %a{:href => perform_book_link(@book,"book")}    
+  %a{:href => book_book_path(:book =>  raw_name_to_url( @book.name ))}     
     .bookicon.pull-left
       .iconv.center
         %i.icon-calendar.icon-6x
       .textv.center
         %b Book    
 
-  %a{:href => perform_book_link(@book,"stats")}      
+  %a{:href => book_stats_path(:book =>  raw_name_to_url( @book.name ))}        
     .bookicon.pull-left
       .iconv.center
         %i.icon-bar-chart.icon-6x
@@ -68,7 +68,8 @@
   %dt.book-author
     =t('author.author').capitalize
     %i.icon-double-angle-right
-  %dd= authorlink(@book.author)
+  %dd= link_to @book.author.name, author_info_path(:author => raw_name_to_url(@book.author.name))
+  
   -######################
   -# book's description #
   -######################
@@ -89,7 +90,7 @@
     - @book.links.each do |link|
       = link_to link.label.capitalize, link.url, :class => 'btn', :target => '_blank'
       
-    = link_to raw("<i class='icon-plus'></i>"), "#{perform_book_link(@book,"/link/add")}", :class => 'btn pull-right'
+    = link_to raw("<i class='icon-plus'></i>"), book_links_path(:book => raw_name_to_url(@book.name)), :class => 'btn pull-right'
     
   -################
   -# book's genre #
@@ -98,7 +99,7 @@
     %dt.book-genres
       =t('book.labels.genre').capitalize
       %i.icon-double-angle-right
-    %dd= link_to @book.genre.name, perform_link(@book.genre,"")
+    %dd= link_to @book.genre.name, genre_view_path(:genre => @book.genre.name)
   
   -##################################
   -# book's flags                   #

@@ -34,27 +34,12 @@
     %tbody
       
       - @author.books.each do |book|
-        %a{:href=>"#"}
-        - if book.available == 0
-          %tr.error
-            %td
-              %a{:href => "#"}= book.name
-            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
-            %td
-              %a{:href=>'#'}
-                %i.icon-trash
-              &nbsp;| 
-              %a{:href=>'#'}
-                %i.icon-pencil
-            
-        - else
-          %tr.success
-            %td
-              %a{:href => "#"}= book.name
-            %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
-            %td
-              %a{:href=>'#'}
-                %i.icon-trash
-              &nbsp;| 
-              %a{:href=>'#'}
-                %i.icon-pencil
+        %tr.success.clickable{:onclick => "location.href='#{book_root_path(:book => raw_name_to_url( book.name ))}'"}
+          %td= book.name
+          %td= Time.at(book.release).utc.strftime("%m/%d/%Y")
+          %td
+            %a{:href=>'#'}
+              %i.icon-trash
+            &nbsp;| 
+            %a{:href=>'#'}
+              %i.icon-pencil
