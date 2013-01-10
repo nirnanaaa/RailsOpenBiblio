@@ -3,4 +3,4 @@
 
 .row.bit-center
   - Tag.find(:all).each do |tag|
-    = link_to tag.name tags_path(tag.name)
+    = link_to tag.name, tag_view_path(tag.name), :class => :btn

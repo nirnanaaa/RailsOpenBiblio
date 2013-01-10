@@ -1,7 +1,7 @@
 RPO::Application.routes.draw do
   root :to => 'splashes#show'
 
-  resources :tags
+  resources :tags                 , :except => :show
   match '/tag/:tag'							  , to: 'tags#show'	                 , :via => :get,  :as => "tag_view"
   
   resource :genres
