@@ -9,3 +9,7 @@ image:
       
 tags:
     maxresults: 100
+user:
+    allow_registration: true
+    allow_login: true
+    allow_profile_view: true

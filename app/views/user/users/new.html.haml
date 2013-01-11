@@ -1,0 +1,10 @@
+- if @user.errors.any?
+  #error_explanation
+    %h2=pluralize(@user.errors.count, "error")
+    - @user.errors.full_messages.each do |msg|
+      = msg
+       
+- elements = [[:username], [:email], [:password], [:password_confirmation]]
+
+= render partial: 'shared/form', locals: {input_fields: elements,
+  hidden_fields: nil, entity: @user}

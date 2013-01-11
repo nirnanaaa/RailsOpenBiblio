@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @user_user_session.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user_user_session.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_user_session_path(@user_user_session) %> |
+<%= link_to 'Back', user_user_sessions_path %>

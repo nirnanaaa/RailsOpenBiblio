@@ -90,16 +90,13 @@ ActiveRecord::Schema.define(:version => 20130110223005) do
   add_index "tags", ["books_id"], :name => "index_tags_on_books_id"
 
   create_table "users", :force => true do |t|
-    t.string   "login"
+    t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
-    t.string   "persistance_token"
-    t.string   "single_access_token"
-    t.string   "perishable_token"
+    t.string   "persistence_token"
     t.integer  "login_count"
     t.integer  "failed_login_count"
-    t.datetime "last_requested_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
     t.string   "current_login_ip"
@@ -107,8 +104,8 @@ ActiveRecord::Schema.define(:version => 20130110223005) do
     t.integer  "books_id"
     t.integer  "authors_id"
     t.integer  "genres_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   add_index "users", ["authors_id"], :name => "index_users_on_authors_id"
