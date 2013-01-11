@@ -2,7 +2,12 @@ page:
   author: Florian Kasper
   encoding: utf-8
   logo: "layout/logo_top.png"
-
+  
+#!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!
+######## ############ ############### ################  
+## DO NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING ##
+######## ############ ############### ################
+#!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!
 roles:
   moderate: moderate_global
   delete: del_global
@@ -18,3 +23,6 @@ roles:
     update: update_account
     rename: rename_account
     ban: ban_account
+  book:
+    create: create_book
+    new: new_book

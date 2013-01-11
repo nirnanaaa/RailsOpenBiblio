@@ -1,6 +1,13 @@
 class User::UserSessionsController < ApplicationController
   respond_to :html, :json
-  
+  ##ACL
+  access_control do
+    deny logged_in,  :to => [:new, :create]
+    allow logged_in, :to => [:destroy]
+    allow anonymous, :to => [:new, :create]
+    deny anonymous,  :to => [:destroy]
+  end
+  ##/ACL
   def new
     @user_session = UserSession.new
 

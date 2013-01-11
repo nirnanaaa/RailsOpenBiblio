@@ -1,5 +1,11 @@
 class Book::BooksController < ApplicationController
-   def cap_name(compressed)
+  access_control do
+    action :new do
+      allow Settings.roles.admin, Settings.roles.moderate
+    end
+  end
+  
+  def cap_name(compressed)
     compressor = compressed.split("-")
     name = Array.new
     compressor.each do |cp|

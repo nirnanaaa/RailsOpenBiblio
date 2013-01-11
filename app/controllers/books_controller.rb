@@ -1,4 +1,10 @@
 class BooksController < ApplicationController
+  access_control do
+    action :new do
+      allow Settings.roles.admin, Settings.roles.moderate, Settings.roles.book.new
+    end
+  end
+  
 	def new
 		@book = Book.new
 	end
@@ -16,13 +22,7 @@ class BooksController < ApplicationController
 		render 'errors/404'
 	end
 	def index
-	
-	end
-	def destroy
-	
-	end
-	def edit
-	
+	  render
 	end
 	
 end
