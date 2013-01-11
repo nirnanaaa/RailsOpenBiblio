@@ -1,52 +1,58 @@
 !!!
 %html{:lang => I18n.locale}
-	%head
-		%title= @title or t 'homepage.title'
-		
-		
-		%meta{:charset => Settings.page.encoding}
-		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-		%meta{:name => "author", :content => Settings.page.author}
-		
-		= stylesheet_link_tag  "application", :media => "all"
+  %head
+    %title= @title or t 'homepage.title'
+    
+    
+    %meta{:charset => Settings.page.encoding}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{:name => "author", :content => Settings.page.author}
+    
+    = stylesheet_link_tag  "application", :media => "all"
 
-		= csrf_meta_tags
-	%body.linear-gradient-background.dimmed
-		#wrapper.container
-			.row
-				.logo
-					= image_tag Settings.page.logo
-			%nav.row.navbar
-				%nav.navbar-inner
-					%ul.nav.pull-left
-						%li
-							= link_to t('menu.home'), root_path
-						%li.divider-vertical
-						%li
-							= link_to t('menu.books'), books_path
-						%li.divider-vertical
-						%li
-							= link_to t('menu.authors'), authors_path
-						%li.divider-vertical
-						%li
-							= link_to t('menu.genres'), genres_path
-						%li.divider-vertical
-						%li
-							= link_to t('menu.tags'), tags_path
-													
-					%ul.nav.pull-right
-						%form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
-							%input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
-			
-			- if flash_messages.nil?
-				.row.warning.alert.alert-block.alert-info
-					%button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
-					= raw flash_messages
-				
-			.row
-				= yield
-	
-		= javascript_include_tag "application"
-		/[if lt IE 9]
-			%script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
+    = csrf_meta_tags
+  %body.linear-gradient-background.dimmed
+    #wrapper.container
+      .row
+        .logo.pull-left.user-control-bar
+          = image_tag Settings.page.logo
+        .pull-right.pull-top
+          .navbar
+            .navbar-inner
+              %ul.nav
+                - if current_user
+                  %li= link_to t('user.logout'), new_user_user_path, :class => 'brand'
+                  %li= link_to t('user.account'), new_user_user_path, :class => 'brand'            
+                - else
+                  %li= link_to t('user.login'), new_user_user_path, :class => 'brand'
+                  %li= link_to t('user.register'), new_user_user_path, :class => 'brand'
+                
+      %nav.row.navbar
+        %nav.navbar-inner
+          %ul.nav.pull-left
+            %li= link_to t('menu.home'), root_path
+            %li.divider-vertical
+            %li= link_to t('menu.books'), books_path
+            %li.divider-vertical
+            %li= link_to t('menu.authors'), authors_path
+            %li.divider-vertical
+            %li= link_to t('menu.genres'), genres_path
+            %li.divider-vertical
+            %li= link_to t('menu.tags'), tags_path
+                          
+          %ul.nav.pull-right
+            %form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
+              %input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
+      
+      - if flash_messages.nil?
+        .row.warning.alert.alert-block.alert-info
+          %button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
+          = raw flash_messages
+        
+      .row
+        = yield
+  
+    = javascript_include_tag "application"
+    /[if lt IE 9]
+      %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")
 

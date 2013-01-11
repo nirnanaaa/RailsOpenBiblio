@@ -35,7 +35,12 @@ en:
     new: new genre
     edit: edit genre
     delete: delete genre
-    
+  user:
+    login: Login
+    logout: Logout
+    account: Account
+    register: Register
+     
   date:
     abbr_day_names:
     - Sun
