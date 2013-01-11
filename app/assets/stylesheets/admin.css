@@ -1,0 +1,9 @@
+/*
+ *= require bootstrap.min.css
+ *= require font-awesome.css
+ *= require_tree ./admin
+ *= require_self
+ */
+.bit-center{
+	margin-left:0!important;
+}

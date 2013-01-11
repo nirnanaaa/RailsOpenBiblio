@@ -1,6 +1,13 @@
 /*
  *= require_self
- *= require_tree .
+ *= require bootstrap.min.css
+ *= require font-awesome.css
+ *= require tags.css.scss
+ *= require scaffolds.css.scss
+ *= require genres.css.scss
+ *= require searches.css.scss
+ *= require books.css.scss
+ *= require author.css.scss
 */
 
 .bit-center{

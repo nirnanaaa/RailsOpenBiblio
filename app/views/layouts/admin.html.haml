@@ -1,0 +1,26 @@
+!!!
+%html{:lang => I18n.locale}
+  %head
+    %title= @title or t 'homepage.title'
+    
+    
+    %meta{:charset => Settings.page.encoding}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{:name => "author", :content => Settings.page.author}
+    
+    = stylesheet_link_tag  "admin", :media => "all"
+
+    = csrf_meta_tags
+  %body.linear-gradient-background.dimmed
+    %nav.navbar-fixed-top.navbar
+      .navbar-inner
+        
+        %ul.nav.pull-left
+          %li.offset3=link_to 'Admin', admin_root_path, :class => 'brand'
+          %li=link_to 'Admin', admin_root_path, :class => 'brand'
+        %ul.pull-right.nav
+          %li logout
+    #wrapper.container
+      .row
+        .logo.pull-left.user-control-bar
+          = image_tag Settings.page.logo

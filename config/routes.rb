@@ -72,6 +72,18 @@ RPO::Application.routes.draw do
     end
   end
   
+  namespace :admin do
+    match '/'                   , to: 'indexes#index'                               , :via => :get,       :as => "root"
+    resources :indexes
+    resources :books
+    resources :authors
+    resources :users
+    resources :tags
+    resources :settings
+    resources :locations
+    resources :groups
+  end
+  
   resources :searches
   match '/search'							  , to: 'searches#search'	                            , :via => :get,       :as => "search"
   
