@@ -23,7 +23,6 @@ en:
       links: links
       genre: genre
       flags: flags
-      
   author:
     author: author
     born: born
@@ -46,6 +45,9 @@ en:
     account: Account
     register: Register
     profile: Profile
+  book:
+      create: create_book
+      new: new_book
   roles:
     search: Search Globally
     moderate: Moderate Globally
@@ -61,9 +63,7 @@ en:
       delete: Delete own account
       update: Update own account
       rename: Rename own account
-   book:
-      create: create_book
-      new: new_book
+
   date:
     abbr_day_names:
     - Sun
