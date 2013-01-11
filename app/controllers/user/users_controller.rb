@@ -5,7 +5,7 @@ class User::UsersController < ApplicationController
     @users = User::User.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render 'errors/404'}
       format.json { render json: @users }
     end
   end
@@ -16,7 +16,7 @@ class User::UsersController < ApplicationController
     @user = User::User.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render 'errors/404'}
       format.json { render json: @user }
     end
   end

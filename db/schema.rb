@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110223005) do
+ActiveRecord::Schema.define(:version => 20130111152554) do
 
   create_table "authors", :force => true do |t|
     t.integer  "author_id"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(:version => 20130110223005) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "users_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "groups", ["users_id"], :name => "index_groups_on_users_id"
+
   create_table "links", :force => true do |t|
     t.string   "label"
     t.string   "url"
@@ -75,6 +85,12 @@ ActiveRecord::Schema.define(:version => 20130110223005) do
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "role"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

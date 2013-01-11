@@ -6,5 +6,5 @@
        
 - elements = [[:username], [:email], [:password], [:password_confirmation]]
 
-= render partial: 'shared/form', locals: {input_fields: elements,
-  hidden_fields: nil, entity: @user}
+= render partial: 'shared/form_norest', locals: {input_fields: elements,
+  hidden_fields: nil, entity: @user, path: user_users_path}
