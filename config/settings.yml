@@ -11,6 +11,7 @@ roles:
   ban: ban_global
   admin: administrator
   
+  #on own account
   account:
     moderate: mod_account
     delete: del_account
