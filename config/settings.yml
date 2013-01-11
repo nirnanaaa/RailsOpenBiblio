@@ -2,3 +2,18 @@ page:
   author: Florian Kasper
   encoding: utf-8
   logo: "layout/logo_top.png"
+
+roles:
+  moderate: moderate_global
+  delete: del_global
+  update: update_global
+  rename: rename_global
+  ban: ban_global
+  admin: administrator
+  
+  account:
+    moderate: mod_account
+    delete: del_account
+    update: update_account
+    rename: rename_account
+    ban: ban_account

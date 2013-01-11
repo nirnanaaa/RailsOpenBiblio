@@ -21,10 +21,10 @@
             .navbar-inner
               %ul.nav
                 - if current_user
-                  %li= link_to t('user.logout'), new_user_user_path, :class => 'brand'
-                  %li= link_to t('user.account'), new_user_user_path, :class => 'brand'            
+                  %li= link_to t('user.logout'), :user_signout, :class => 'brand'
+                  %li= link_to t('user.account'), :user_self, :class => 'brand'            
                 - else
-                  %li= link_to t('user.login'), new_user_user_path, :class => 'brand'
+                  %li= link_to t('user.login'), :user_signin, :class => 'brand'
                   %li= link_to t('user.register'), new_user_user_path, :class => 'brand'
                 
       %nav.row.navbar

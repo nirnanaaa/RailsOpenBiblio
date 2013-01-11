@@ -40,7 +40,8 @@ en:
     logout: Logout
     account: Account
     register: Register
-     
+    profile: Profile
+  
   date:
     abbr_day_names:
     - Sun

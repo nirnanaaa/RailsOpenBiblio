@@ -54,7 +54,7 @@ RPO::Application.routes.draw do
     resources :users
     match '/signin'               , to: 'user_sessions#create'                      , :as => "signin"
     match '/signout'              , to: 'user_sessions#destroy'                     , :as => "signout"
-    
+    match '/self'                 , to: 'stats#index'                               , :as => "self"
     scope ":name" do
         #Root path
         match '/'               , to: 'users#show'                                  , :via => :get,       :as => "root"
