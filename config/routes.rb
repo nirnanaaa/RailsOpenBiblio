@@ -50,11 +50,17 @@ RPO::Application.routes.draw do
   
   #/user
   namespace :user do
-    resources :user_sessions      , :as => "sessions"
+    resources :user_sessions    , :as => "sessions"
     resources :users
-    match '/signin'               , to: 'user_sessions#create'                      , :as => "signin"
-    match '/signout'              , to: 'user_sessions#destroy'                     , :as => "signout"
-    match '/self'                 , to: 'stats#index'                               , :as => "self"
+    match '/signin'             , to: 'user_sessions#create'                      , :as => "signin"
+    match '/signout'            , to: 'user_sessions#destroy'                     , :as => "signout"
+    scope 'self' do
+      match '/'                 , to: 'stats#index'                               , :as => "self"
+      match '/edit'             , to: 'stats#edit'                                , :as => "self_edit"
+      match '/update'           , to: 'stats#update'                              , :as => "self_update"
+    end
+    
+
     scope ":name" do
         #Root path
         match '/'               , to: 'users#show'                                  , :via => :get,       :as => "root"

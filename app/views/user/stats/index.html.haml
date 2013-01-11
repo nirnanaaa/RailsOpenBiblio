@@ -2,7 +2,7 @@
   .pull-left
     %h1=t('user.profile')
   .btn-group.pull-right
-    =link_to t('user.edit'), edit_user_user_path(@user), :class => 'btn'
+    =link_to t('user.edit'), user_self_edit_path, :class => 'btn'
     -if @user.has_role?(Settings.roles.moderate)
       =link_to t('user.delete'), edit_user_user_path(@user), :class => 'btn'
 .row.bit-center
