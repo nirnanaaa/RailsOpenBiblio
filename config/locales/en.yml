@@ -46,7 +46,24 @@ en:
     account: Account
     register: Register
     profile: Profile
+  roles:
+    search: Search Globally
+    moderate: Moderate Globally
+    delete: Delete Globally
+    update: Update Globally
+    rename: Rename Globally
+    ban: Ban Globally
+    admin: Administrate
   
+    #on own account
+    account:
+      moderate: Modify own account
+      delete: Delete own account
+      update: Update own account
+      rename: Rename own account
+   book:
+      create: create_book
+      new: new_book
   date:
     abbr_day_names:
     - Sun

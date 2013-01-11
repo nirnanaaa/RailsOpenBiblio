@@ -1,7 +1,13 @@
 class BooksController < ApplicationController
   access_control do
     action :new do
-      allow Settings.roles.admin, Settings.roles.moderate, Settings.roles.book.new
+      allow Settings.roles.admin, Settings.roles.moderate #admins and mods and creators, groups ?
+    end
+    action :index do
+      allow all
+    end
+    action :create do
+      allow Settings.roles.admin, Settings.roles.moderate #admins and mods and creators, groups ?
     end
   end
   

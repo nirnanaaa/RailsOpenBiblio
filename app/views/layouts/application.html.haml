@@ -39,10 +39,11 @@
             %li= link_to t('menu.genres'), genres_path
             %li.divider-vertical
             %li= link_to t('menu.tags'), tags_path
-                          
-          %ul.nav.pull-right
-            %form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
-              %input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
+          - if current_user
+            -if current_user.has_role?(Settings.roles.search)                
+              %ul.nav.pull-right
+                %form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
+                  %input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
       
       - if flash_messages.nil?
         .row.warning.alert.alert-block.alert-info

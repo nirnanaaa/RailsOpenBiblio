@@ -9,6 +9,7 @@ page:
 ######## ############ ############### ################
 #!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!
 roles:
+  search: search_global
   moderate: moderate_global
   delete: del_global
   update: update_global
