@@ -36,6 +36,11 @@ en:
     edit: edit genre
     delete: delete genre
   user:
+    edit: Edit user
+    update: Update user
+    delete: Delete user
+    ban: Ban user
+    warn: Warn user
     login: Login
     logout: Logout
     account: Account
