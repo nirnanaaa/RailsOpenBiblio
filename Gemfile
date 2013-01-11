@@ -24,9 +24,15 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem "haml", "~> 3.1.7"
+
 gem 'simple_form'
+
 gem 'paperclip'
+
 gem "rails_config"
+
 gem "thin"
+
 gem "authlogic"
+
 gem "acl9"
