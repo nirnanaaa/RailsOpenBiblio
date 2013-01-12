@@ -47,10 +47,10 @@
               %form.navbar-search.pull-right{:method=>'GET', :action=>search_path}
                 %input.search-query.search{:type=>'text',:placeholder=>t('homepage.search').capitalize,:name=>"keyword"}
       
-      - if flash_messages.nil?
-        .row.warning.alert.alert-block.alert-info
-          %button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
-          = raw flash_messages
+      -#- if not flash_messages.nil?
+      -#  .row.warning.alert.alert-block.alert-info
+      -#    %button.close{:type=>'button', 'data-dismiss'=>'alert'} &times;
+          
         
       .row
         = yield
