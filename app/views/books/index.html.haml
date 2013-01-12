@@ -26,7 +26,7 @@
             - if book.author && book.author.name
               %dt
                 %i.icon-star{:title => t('author.author').capitalize}
-              %dd= link_to book.author.name, author_info_path(:author => raw_name_to_url(book.author.name))
+              %dd.minor-margin-bottom= link_to book.author.name, author_info_path(:author => raw_name_to_url(book.author.name)), :class => 'btn'
             
             - if book.kind
               %dt

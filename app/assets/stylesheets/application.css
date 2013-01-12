@@ -65,3 +65,15 @@ thead{
 .new-button{
 	margin-bottom: 20px!important;
 }
+.minor-margin-bottom{
+	margin-bottom: 5px;
+}
+.minor-margin-top{
+	margin-top: 5px;
+}
+.minor-margin-left{
+	margin-left: 5px;
+}
+.minor-margin-right{
+	margin-right: 5px;
+}
