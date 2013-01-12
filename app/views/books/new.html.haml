@@ -1,13 +1,13 @@
-- elements = [[:name], [:release, :as => :date_picker], [:kind, :as => :string, :label => 'Tags']]
-- elements << [:fullname, :label => "Original Name"]
-- elements << [:author_id,:collection => Author.find(:all).collect{|c| [c.name, c.id]}, :prompt => "Select the Author"]
-- elements << [:genre_id,:collection => Genre.find(:all).collect{|c| [c.name, c.id]}, :prompt => "Select the Genre"]
-- elements << [:isbn, :as => :integer]
-- elements << [:image, :as => :file_field, :label => "Cover"]
-- elements << [:slogan, :label => "Genre", :as => :string]
-- elements << [:description, :label => "Content"]
-
-- elements << [:available, :as => :boolean]
+- elements = [[:name], [:release, :as => :date_picker], [:kind, :as => :string, :label => t('book.tags').capitalize]]
+- elements << [:fullname, :label => t('book.original_name').capitalize, :class => :tooltip]
+- elements << [:author_id,:collection => Author.find(:all).collect{|c| [c.name, c.id]}, :prompt => t('book.select_author')]
+- elements << [:genre_id,:collection => Genre.find(:all).collect{|c| [c.name, c.id]}, :prompt => t('book.select_genre')]
+- elements << [:isbn, :as => :integer, :label => t('book.isbn').upcase]
+- elements << [:image, :as => :file_field, :label => t('book.cover_pic').capitalize]
+- elements << [:slogan, :label => t('book.genre').capitalize, :as => :string]
+- elements << [:description, :label => t('book.content').capitalize]
+- elements << [:available, :as => :boolean, :label => t('book.available').capitalize]
+- elements << [:downloadable, :as => :boolean, :label => t('book.downloadable').capitalize]
 
 = render partial: 'shared/form', locals: {input_fields: elements,
   hidden_fields: nil, entity: @book}

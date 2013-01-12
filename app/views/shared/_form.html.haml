@@ -1,6 +1,6 @@
 .row
 	%div{class: "span6 offset1"}
-		= simple_form_for entity, :html => { :class => 'form-horizontal', multipart:true }  do |f|
+		= simple_form_for entity ,:html => { :class => 'form-horizontal', multipart:true }  do |f|
 			- input_fields.each do |field|
 				= f.input *field 
 		
