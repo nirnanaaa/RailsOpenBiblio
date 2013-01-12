@@ -8,16 +8,16 @@ page:
 #!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!
 newuser:
   roles:
-    - search
-    - tags.menu
-    - books.menu
-    - authors.menu
-    - home.menu
-    - genres.menu
-    - book.view
-    - author.view
-    - tag.view
-    - genre.view
+      - search
+      - tags.menu
+      - books.menu
+      - authors.menu
+      - home.menu
+      - genres.menu
+      - book.view
+      - author.view
+      - tag.view
+      - genre.view
     
 #!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!
 ######## ############ ############### ################  
@@ -26,7 +26,8 @@ newuser:
 #!!!!!!!#!!!!!!!!!!!!#!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!
 roles:
   globally:
-    search: search_global
+      search: search_global
+    
   search: search_global
   moderate: moderate_global
   delete: del_global
