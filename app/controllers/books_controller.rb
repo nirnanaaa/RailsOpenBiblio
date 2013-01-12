@@ -1,12 +1,14 @@
 class BooksController < ApplicationController
   access_control do
     action :new do
+      allow all
       allow Settings.roles.admin, Settings.roles.moderate #admins and mods and creators, groups ?
     end
     action :index do
       allow all
     end
     action :create do
+      #allow all
       allow Settings.roles.admin, Settings.roles.moderate #admins and mods and creators, groups ?
     end
   end
@@ -25,7 +27,7 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		render 'errors/404'
+		render :not_found
 	end
 	def index
 	  render

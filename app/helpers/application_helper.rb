@@ -29,10 +29,20 @@ module ApplicationHelper
   def order_by_link(sort, by = nil)
 	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)
   end
+  
+  ## replace whitespaces
   def url_name_to_raw(url)
     url.split("-").join(" ")
   end
+  
   def raw_name_to_url(name)
     name.split(" ").join("-")
   end
+  ##/replace whitespaces
+  ##generators
+  def generate_onclick(link)
+    ##bare javascript
+    "location.href='#{link}'"
+  end
+  ##/generators
 end

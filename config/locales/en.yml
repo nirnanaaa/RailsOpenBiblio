@@ -3,8 +3,9 @@ en:
     title: RailsOpenBiblio
     search: search
     name: name
-    
-  preview: preview
+    information: information
+    title: title
+    preview: preview
   menu:
     home: Home
     books: Books

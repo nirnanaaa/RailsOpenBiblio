@@ -5,33 +5,33 @@
   %table.table-striped.table-hover.table-condensed.hundret.table-bordered
     %thead
       %tr
-        %td= t 'preview'.capitalize
-        %td.center= t 'information'.capitalize
+        %td= t('homepage.preview').capitalize
+        %td.center= t('homepage.information').capitalize
         
     %tbody
     - Book.find(:all).each do |book|
-      %tr.der-gegenschlag
+      %tr.clickable{:onclick => generate_onclick(book_root_path(:book => raw_name_to_url(book.name)))}
         %td.preview-image
-          =link_to( image_tag( book.image(:thumb)), "book/#{name(book)}")
+          =image_tag( book.image(:thumb))
         %td.list-information
           %dl.dl-horizontal
             %dt
-              %i.icon-file{:title => 'name'.capitalize}
+              %i.icon-file{:title => t('name').capitalize}
             %dd= book.name
             
             - if book.description
               %dt
-                %i.icon-th{:title => 'description'}
+                %i.icon-th{:title => t('description').capitalize}
               %dd= truncate(book.description, :length => 260)
             - if book.author && book.author.name
               %dt
-                %i.icon-star{:title => 'author'}
-              %dd= link_to book.author.name, "/author/#{name(book)}"
+                %i.icon-star{:title => t('author.author').capitalize}
+              %dd= link_to book.author.name, author_info_path(:author => raw_name_to_url(book.author.name))
             
             - if book.kind
               %dt
-                %i.icon-th-list{:title => 'tags'}
+                %i.icon-th-list{:title => t('tags').capitalize}
               %dd
-                .btn-group=render(:inline =>tag_generator(book.kind))
+                .btn-group=render(:inline => tag_generator(book.kind))
 
     
