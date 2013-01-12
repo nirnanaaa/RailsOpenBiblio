@@ -21,15 +21,17 @@
           
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-group
               Users and Groups
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
               = render partial: 'admin/users/menu'
-              %hr
+              %li.divider
               = render partial: 'admin/groups/menu'
               
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-cloud
               System
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
@@ -37,6 +39,7 @@
               
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-book
               Books
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
@@ -44,6 +47,7 @@
               
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-leaf
               Genres
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
@@ -51,6 +55,7 @@
               
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-retweet
               Tags
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
@@ -58,6 +63,7 @@
               
           %li.dropdown
             %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %i.icon-user
               Authors
               %b.caret
             %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
@@ -66,8 +72,9 @@
               
               
         %ul.pull-right.nav
-          %li=link_to 'back to page'
-          %li=link_to 'logout'
+          %li=link_to raw('<i class="icon-home">Home</i>'), :root
+          %li=link_to raw('<i class="icon-signout">Sign out</i>'), :user_signout
+            
     #wrapper.container
       .row
         .logo.pull-left.user-control-bar
