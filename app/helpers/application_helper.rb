@@ -31,7 +31,7 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
     Settings.settings.user_control_bar_enabled
   end
   
-  def pagelogo
+  def page_logo
     Settings.page.logo
   end
   
@@ -42,6 +42,7 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
   def page_encoding
     Settings.page.encoding
   end
+  
   ##/some settings
   
   def order_by_link(sort, by = nil)
