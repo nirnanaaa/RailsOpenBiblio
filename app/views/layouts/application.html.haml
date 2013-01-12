@@ -22,7 +22,9 @@
               %ul.nav
                 - if current_user
                   %li= link_to t('user.logout'), :user_signout, :class => 'brand'
-                  %li= link_to t('user.account'), :user_self, :class => 'brand'            
+                  %li= link_to t('user.account'), :user_self, :class => 'brand'         
+                  - if use_admin?
+                    %li= link_to t('roles.admin'), :user_self, :class => 'brand'
                 - else
                   %li= link_to t('user.login'), :user_signin, :class => 'brand'
                   %li= link_to t('user.register'), new_user_user_path, :class => 'brand'

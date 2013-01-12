@@ -55,7 +55,7 @@ en:
     update: Update Globally
     rename: Rename Globally
     ban: Ban Globally
-    admin: Administrate
+    admin: admin
   
     #on own account
     account:
