@@ -9,7 +9,11 @@ image:
       
 tags:
     maxresults: 100
+    
 user:
     allow_registration: true
     allow_login: true
     allow_profile_view: true
+    
+settings:
+    user_control_bar_enabled: true

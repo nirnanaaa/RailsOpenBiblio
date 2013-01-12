@@ -11,3 +11,5 @@ urls:
     book_url: /book/
     link:
       new:  :!book/link/new
+settings:
+    navbar_enabled: true

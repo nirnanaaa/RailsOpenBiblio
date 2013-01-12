@@ -25,13 +25,8 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
 	end
 	dimensions
   end
-  def authorlink(author)
-	name = author.name.split(" ").join("-").downcase
-	link_to author.name, "#{Settings.urls.author_url}#{name}"
-  end
-  def booklink(book)
-	name = book.name.split(" ").join("-").downcase
-	link_to book.name, "#{Settings.urls.book_url}#{name}"
+  def ctrlbar_enabled?
+    Settings.settings.user_control_bar_enabled
   end
   def order_by_link(sort, by = nil)
 	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)

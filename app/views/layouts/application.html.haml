@@ -16,18 +16,19 @@
       .row
         .logo.pull-left.user-control-bar
           = image_tag Settings.page.logo
-        .pull-right.pull-top
-          .navbar
-            .navbar-inner
-              %ul.nav
-                - if current_user
-                  %li= link_to t('user.logout'), :user_signout, :class => 'brand'
-                  %li= link_to t('user.account'), :user_self, :class => 'brand'         
-                  - if use_admin?
-                    %li= link_to t('roles.admin'), :user_self, :class => 'brand'
-                - else
-                  %li= link_to t('user.login'), :user_signin, :class => 'brand'
-                  %li= link_to t('user.register'), new_user_user_path, :class => 'brand'
+        - if ctrlbar_enabled?
+          .pull-right.pull-top
+            .navbar
+              .navbar-inner
+                %ul.nav
+                  - if current_user
+                    %li= link_to t('user.logout'), :user_signout, :class => 'brand'
+                    %li= link_to t('user.account'), :user_self, :class => 'brand'         
+                    - if use_admin?
+                      %li= link_to t('roles.admin').capitalize, :user_self, :class => 'brand'
+                  - else
+                    %li= link_to t('user.login'), :user_signin, :class => 'brand'
+                    %li= link_to t('user.register'), new_user_user_path, :class => 'brand'
                 
       %nav.row.navbar
         %nav.navbar-inner
