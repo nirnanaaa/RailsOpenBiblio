@@ -1,4 +1,13 @@
 en:
+    admin:
+        menu:
+            users_and_groups: Users and Groups
+            manage_users: Manage users
+            inactive_users: Inactive users
+            user_roles: User roles
+            custom_fields: Custom fields
+            manage_groups: Manage groups
+            group_roles: Group roles
     homepage:
         title: RailsOpenBiblio
         search: search

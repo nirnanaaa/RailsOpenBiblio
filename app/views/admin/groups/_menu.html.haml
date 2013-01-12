@@ -1,2 +1,8 @@
-%li= link_to 'Manage groups'
-%li= link_to 'Roles'
+%li
+  =link_to :admin_users_manage do
+    %i.icon-cogs
+    =t 'admin.menu.manage_groups'
+%li
+  =link_to :admin_users_manage do
+    %i.icon-user-md
+    =t 'admin.menu.group_roles'

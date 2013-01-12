@@ -1,4 +1,17 @@
-%li=link_to 'Manage users'
-%li=link_to 'Inactive users'
-%li=link_to 'User roles'
-%li=link_to 'Custom fields'
+%li
+  =link_to :admin_users_manage do
+    %i.icon-cogs
+    =t 'admin.menu.manage_users'
+%li
+  =link_to :admin_users_inactive do
+    %i.icon-volume-off
+    =t 'admin.menu.inactive_users'
+%li
+  =link_to :admin_users_roles do
+    %i.icon-user-md
+    =t 'admin.menu.user_roles'
+    
+%li
+  =link_to :admin_users_custom do
+    %i.icon-desktop
+    =t 'admin.menu.custom_fields'
