@@ -4,9 +4,9 @@
     %title= @title or t 'homepage.title'
     
     
-    %meta{:charset => Settings.page.encoding}
+    %meta{:charset => page_encoding}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %meta{:name => "author", :content => Settings.page.author}
+    %meta{:name => "author", :content => page_author}
     
     = stylesheet_link_tag  "application", :media => "all"
 
@@ -15,7 +15,7 @@
     #wrapper.container
       .row
         .logo.pull-left.user-control-bar
-          = image_tag Settings.page.logo
+          = image_tag pagelogo
         - if ctrlbar_enabled?
           .pull-right.pull-top
             .navbar

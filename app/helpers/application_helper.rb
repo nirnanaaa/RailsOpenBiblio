@@ -25,9 +25,25 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning, :success]
 	end
 	dimensions
   end
+  
+  ##some settings
   def ctrlbar_enabled?
     Settings.settings.user_control_bar_enabled
   end
+  
+  def pagelogo
+    Settings.page.logo
+  end
+  
+  def page_author
+    Settings.page.author
+  end
+  
+  def page_encoding
+    Settings.page.encoding
+  end
+  ##/some settings
+  
   def order_by_link(sort, by = nil)
 	link_to(by.singularize.capitalize, :action => :index, :sort_by => by)
   end
