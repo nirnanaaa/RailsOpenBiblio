@@ -8,6 +8,7 @@
  *= require searches.css.scss
  *= require books.css.scss
  *= require author.css.scss
+ *= require ./smoothness/jquery-ui-1.9.2.custom.min.css
 */
 
 .bit-center{
@@ -56,7 +57,7 @@ textarea{
 	display:inline
 }
 .hidden{
-	display: none;
+	display: none!important;
 }
 thead{
 	font-weight:bold;
