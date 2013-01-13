@@ -54,7 +54,9 @@
         
       .row
         = yield
-  
+      %footer.footer
+        = render partial: 'layouts/footer'
+        
     = javascript_include_tag "application"
     /[if lt IE 9]
       %script(src="//html5shim.googlecode.com/svn/trunk/html5.js")

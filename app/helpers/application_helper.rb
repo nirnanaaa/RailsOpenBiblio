@@ -6,8 +6,19 @@ module ApplicationHelper
 	end
 	dimensions
   end
-  
   ##some settings
+  def copyright_show
+    Settings.vars.copyright_text.html_safe
+  end
+  def copyright_show?
+    Settings.settings.show_copyright
+  end
+  def version_show?
+    Settings.settings.show_version
+  end
+  def version_show
+    Settings.vars.version_string.html_safe
+  end
   def ctrlbar_enabled?
     Settings.settings.user_control_bar_enabled
   end

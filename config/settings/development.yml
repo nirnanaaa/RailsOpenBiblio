@@ -14,6 +14,10 @@ user:
     allow_registration: true
     allow_login: true
     allow_profile_view: true
-    
+vars:
+    copyright_text: "RailsOpenBiblio <name>"
+    version_string: v0.0.1
 settings:
     user_control_bar_enabled: true
+    show_copyright: true
+    show_version: true
