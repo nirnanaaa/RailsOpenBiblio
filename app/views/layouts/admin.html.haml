@@ -17,57 +17,57 @@
         .navbar-inner
           
           %ul.nav.pull-left
-            %li.offset3=link_to 'Admin', admin_root_path, :class => 'brand'
+            %li.offset3=link_to 'Admin', admin_root_path, class: 'brand'
             
             
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-group
                 Users and Groups
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/users/menu'
                 %li.divider
                 = render partial: 'admin/groups/menu'
               
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-cloud
                 System
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/systems/menu'
                 
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-book
                 Books
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/books/menu'
               
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-leaf
                 Genres
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/genres/menu'
               
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-retweet
                 Tags
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/tags/menu' 
               
             %li.dropdown
-              %a.dropdown-toggle#dLabel{:role => "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
+              %a.dropdown-toggle#dLabel{role: "button", "data-toggle" => "dropdown", "data-target" => "#", :href => "#"}
                 %i.icon-user
                 Authors
                 %b.caret
-              %ul.dropdown-menu{:role => "menu", "aria-labelledby" => "dLabel"}
+              %ul.dropdown-menu{role: "menu", "aria-labelledby" => "dLabel"}
                 = render partial: 'admin/authors/menu'  
               
               

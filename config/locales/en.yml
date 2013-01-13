@@ -1,13 +1,4 @@
 en:
-    admin:
-        menu:
-            users_and_groups: Users and Groups
-            manage_users: Manage users
-            inactive_users: Inactive users
-            user_roles: User roles
-            custom_fields: Custom fields
-            manage_groups: Manage groups
-            group_roles: Group roles
     homepage:
         title: RailsOpenBiblio
         search: search
@@ -21,6 +12,35 @@ en:
         authors: Authors
         genres: Genres
         tags: Tags
+        admin:
+          users_and_groups:
+            top: Users and Groups
+            users:
+              manage_users: Manage users
+              inactive_users: Inactive users
+              user_roles: User roles
+              custom_fields: Custom fields
+            groups:
+              manage_groups: Manage groups
+              group_roles: Group roles
+          system:
+            top: System
+            status: Status
+            settings: Settings
+            database: Database
+            security: Security
+          books:
+            top: Books
+            manage_books: Manage books
+          genres:
+            top: Genres
+            manage_genres: Manage genres
+          tags:
+            top: Tags
+            manage_tags: Manage tags
+          authors:
+            top: Authors
+            manage_authors: Manage authors
     book:
         new: new book
         delete: delete book
