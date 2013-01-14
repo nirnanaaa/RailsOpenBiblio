@@ -1,5 +1,5 @@
 class Admin::IndexesController < ApplicationController
   def index
-    render :layout => 'admin'
+    render 'index', :layout => 'admin'
   end
 end
